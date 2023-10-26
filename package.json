@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt generate",
+    "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
@@ -13,9 +13,18 @@
     "@nuxt/devtools": "latest",
     "autoprefixer": "^10.4.16",
     "nuxt": "^3.8.0",
+    "nuxt-gtag": "^1.1.1",
+    "nuxt-simple-robots": "^3.1.6",
+    "nuxt-simple-sitemap": "^3.4.1",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.5",
     "vue": "^3.3.7",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@gtm-support/vue-gtm": "^2.2.0",
+    "@pinia/nuxt": "^0.5.1",
+    "nuxt-jsonld": "^2.0.8",
+    "pinia": "^2.1.7"
   }
 }
