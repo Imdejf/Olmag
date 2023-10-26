@@ -32,7 +32,11 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div>
-    <NuxtWelcome />
-  </div>
+  <Html lang="pl">
+    <Body>
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+    </Body>
+  </Html>
 </template>

@@ -63,6 +63,13 @@ app: {
     '@/assets/css/main.css',
   ],
 
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+
   modules: [
     'nuxt-jsonld',
     '@pinia/nuxt',
