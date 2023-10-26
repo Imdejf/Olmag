@@ -59,6 +59,10 @@ app: {
     }
   },
 
+  css: [
+    '@/assets/css/main.css',
+  ],
+
   modules: [
     'nuxt-jsonld',
     '@pinia/nuxt',

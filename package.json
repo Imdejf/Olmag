@@ -25,6 +25,7 @@
     "@gtm-support/vue-gtm": "^2.2.0",
     "@pinia/nuxt": "^0.5.1",
     "nuxt-jsonld": "^2.0.8",
+    "nuxt-swiper": "^1.2.2",
     "pinia": "^2.1.7"
   }
 }
