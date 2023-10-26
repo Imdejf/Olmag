@@ -1,3 +1,26 @@
+<script lang="ts" setup>
+useHead({
+  script: [
+    {
+      src: "https://www.czater.pl/assets/modules/chat/js/chat.js",
+      async: true,
+      tagPosition: "bodyClose",
+    },
+    {
+      innerHTML: `
+          window.$czater = {
+            tok: "5d4c696e9ee36d71ff6f20f8c5a2dc3ef0e3c4fe",
+            domain: "https://www.czater.pl/",
+            login: undefined,
+            email: undefined,
+          };
+        `,
+      tagPosition: "bodyClose",
+    },
+  ],
+});
+</script>
+
 <template>
   <div>
     <NuxtWelcome />
