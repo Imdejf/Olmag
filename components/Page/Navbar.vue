@@ -39,25 +39,24 @@ const identity = useIdentity();
         <div class="flex items-center justify-between">
           <button @click="application.changeTopMenu" class="hidden md:block">
             <img
-              data-src="/icons/menu.svg"
+              src="/icons/menu.svg"
               alt="Ikona kategorii"
               data-sizes="auto"
-              class="lazyload mx-auto w-[40px] h-[40px]"
+              class="mx-auto w-[40px] h-[40px]"
             />
             <span class="tracking-1px font-bold uppercase">Kategorie</span>
           </button>
           <NuxtLink to="/" rel="next" class="md:block md:mx-8">
             <img
-              data-src="/assets/logo.webp"
-              data-sizes="auto"
-              class="lazyload hidden md:block"
+              src="/assets/logo.webp"
+              class="hidden md:block"
               alt="Logo Olmag.pl"
               height="50"
               width="240"
             />
             <img
-              data-src="/assets/logo-mobile.webp"
-              class="lazyload block md:hidden"
+              src="/assets/logo-mobile.webp"
+              class="block md:hidden"
               height="100"
               width="280"
               alt="Logo Olmag.pl"
