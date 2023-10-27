@@ -155,11 +155,4 @@ export default {
   padding-right: 0.5rem;
   color: #ccc;
 }
-
-li:not(:last-child)::after {
-  content: "|";
-  margin-left: 15px;
-  margin-right: 15px; /* możesz dostosować marginesy, aby uzyskać odpowiednie odstępy */
-  color: #d1d5db;
-}
 </style>

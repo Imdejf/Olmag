@@ -33,7 +33,7 @@ watchEffect(() => {
 
 <template>
   <Html lang="pl">
-    <Body>
+    <Body class="text-blue-900 overflow-x-hidden font-nunito bg-gray-50">
       <NuxtLayout>
         <NuxtPage />
       </NuxtLayout>
