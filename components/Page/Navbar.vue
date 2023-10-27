@@ -6,6 +6,63 @@ import { useIdentity } from "~/stores/identity";
 const cart = useCart();
 const application = useApplication();
 const identity = useIdentity();
+
+const searchString = ref("");
+const showContatct = ref(false);
+const showResults = ref(false);
+const categoryResult = ref(null);
+const productResult = ref(null);
+
+const isAuthenticated = computed(() => {
+  return identity.getIsAuthenticated();
+});
+
+const routeToSearch = () => {
+  window.location.href = "/search/?query=" + searchString.value;
+};
+
+const openShoppingCart = () => {
+  application.changeShoppingCart();
+};
+
+if (useCookie("dsCustomer").value) {
+  cart.initCartBadge();
+}
+
+const hideResult = () => {
+  setTimeout(() => {
+    showResults.value = false;
+    return false;
+  }, 300);
+  application.searchMenuIsOpen = false;
+};
+
+let searchTimeout = 0;
+
+const searchQuery = () => {
+  clearTimeout(searchTimeout);
+
+  productResult.value = productsData
+    .filter(
+      (product) =>
+        product.name.toLowerCase().includes(searchString.value.toLowerCase()) ||
+        product?.identificationCode
+          ?.toLowerCase()
+          .includes(searchString.value.toLowerCase())
+    )
+    .slice(0, 6);
+
+  categoryResult.value = categoriesData.filter((product) =>
+    product.name.toLowerCase().includes(searchString.value.toLowerCase())
+  );
+  application.searchMenuIsOpen = true;
+};
+
+onMounted(() => {
+  if (useCookie("dsCustomer").value && useCookie("Authorization").value) {
+    identity.setUserData();
+  }
+});
 </script>
 <template>
   <BuilderNavbar>
@@ -197,6 +254,7 @@ const identity = useIdentity();
               </div>
             </NuxtLink>
             <NuxtLink
+              to="/contact"
               @mouseover="showContatct = true"
               @mouseleave="showContatct = false"
               class="text-center hidden md:block text-gray-700 hover:text-primary transition relative"

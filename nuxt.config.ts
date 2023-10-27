@@ -1,20 +1,32 @@
 import { GlobalSettings } from "./environmentsettings"
+// import { fetchCategories, fetchBlogs, fetchProducts } from "./static/api/getData"
+import { fetchSitemapProducts, fetchSitemapCategories, fetchSitemapBlogs, fetchSitemapPost } from "./static/api/getSitemap";
 
 const appEnv = process.env.ENV || 'development'
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
   site: {
-    url: GlobalSettings[appEnv].hostURL
+    url: GlobalSettings[appEnv].baseURL
   },
   nitro: {
     routeRules: {
       "/public/assets/**": { headers: { 'cache-control': `public,max-age=${31536000},s-maxage=${31536000}` } },
       '/': { prerender: true },
     },
-    prerender: {
-        crawlLinks:true
-    },
+},
+hooks: {
+  async 'nitro:config'(nitroConfig) {
+      // if (nitroConfig.dev) {
+      //     return
+      // }
+      await siteMapGeneration();
+      // await saveDataToFile();
+      // const blogSlugs = await getBlogRoutes();
+      // const categorySlugs = await getCategory();
+      // nitroConfig.prerender.routes.push(...blogSlugs, ...categorySlugs)
+      return
+  }
 },
 
 app: {
@@ -79,5 +91,38 @@ app: {
       id: GlobalSettings[appEnv].google_analytics_id,
       initialConsent: true,
     }],  
-  ]
+  ],
+  
+  sitemap: {
+    xsl: false,
+    cacheTtl: 1000 * 60 * 60 * 24, // 1 day
+    inferStaticPagesAsRoutes: false,
+  },
+
+  routeRules: {
+    '/': { sitemap: { 
+      changefreq: 'daily', 
+      priority: 1.0.toFixed(1)
+      },
+    }
+  },
+
+  robots: {
+    sitemap: '/sitemap.xml'
+  },
+  
 })
+
+// const saveDataToFile = async () => {
+//   await fetchCategories(GlobalSettings[appEnv].storeId, GlobalSettings[appEnv].languageId, GlobalSettings[appEnv].apiBaseURL);
+//   await fetchBlogs(GlobalSettings[appEnv].storeId, GlobalSettings[appEnv].languageId, GlobalSettings[appEnv].apiBaseURL);
+//   await fetchProducts(GlobalSettings[appEnv].storeId, GlobalSettings[appEnv].languageId, GlobalSettings[appEnv].baseURL);
+// }
+
+const siteMapGeneration = async () => {
+  await fetchSitemapProducts(GlobalSettings[appEnv].storeId, GlobalSettings[appEnv].apiBaseURL)
+  await fetchSitemapCategories(GlobalSettings[appEnv].storeId, GlobalSettings[appEnv].apiBaseURL)
+  await fetchSitemapBlogs(GlobalSettings[appEnv].storeId, GlobalSettings[appEnv].apiBaseURL)
+  await fetchSitemapPost(GlobalSettings[appEnv].storeId, GlobalSettings[appEnv].apiBaseURL)
+}
+
