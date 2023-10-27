@@ -57,7 +57,7 @@ export interface BlogCategoryDTO {
     description: string;
     author: string;
     isActive: boolean;
-    createdOn: string; // or you can use the Date type if you prefer
+    createdOn: string;
     thumbnailImageId: string;
     thumbnailImage: MediaDTO;
     blogItemLangs: BlogItemLangDTO[];

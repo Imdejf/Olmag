@@ -1,11 +1,7 @@
 <script lang="ts" setup>
-import { BlogCategoryDTO } from "~/types/Blog/BlogTypes";
+import blogs from "~/data/blog/blogs.json";
 
 const config = useRuntimeConfig().public;
-
-const { data: blogs } = await useAsyncData<BlogCategoryDTO | []>("blogs", () =>
-  $fetch(config.hostURL + "data/blog/blogs.json")
-);
 </script>
 
 <template>
