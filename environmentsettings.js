@@ -3,7 +3,7 @@ const GlobalSettings = {
     siteEnvironment: "Dev",
     apiBaseURL: "https://olmag.azurewebsites.net/api/",
     baseURL: "https://olmag.azurewebsites.net/",
-    hostURL: "hhttps://olmag.pl/",
+    hostURL: "https://olmag.pl/",
     googleTagManagerKey: "GTM-NXFTLZGJ",
     googleTagManagerEnabled: true,
     googleTagManagerDebug: true,
