@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import "lazysizes";
+import "lazysizes/plugins/parent-fit/ls.parent-fit";
 const isScriptReady = ref(false);
 
 setTimeout(() => {

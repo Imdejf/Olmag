@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import categories from "~/data/category/categories.json";
+import products from "~/data/product/products.json";
+import blogCategories from "~/data/blog/blogs.json";
 // compiler macro
 definePageMeta({
   layout: "page",
@@ -206,9 +209,37 @@ useHead({
           </div>
         </div>
       </PageSection>
+      <PageSection class="section__most_view_category container mx-auto mt-10">
+        <div class="px-2 md:px-0">
+          <div class="tracking-1px font-semibold text-2xl">
+            <div class="flex">
+              <h2 class="distinction__title mx-auto">Najczęściej odwiedzane</h2>
+            </div>
+            <div>
+              <GridCategoryMostView
+                :categories="categories?.filter((c) => c.mostVisited === true)"
+              />
+            </div>
+          </div>
+        </div>
+      </PageSection>
       <!-- <PageSection>
         <SwiperBanner />
       </PageSection> -->
     </PageBody>
   </PageWrapper>
 </template>
+
+<style>
+.diagonal-split-background {
+  background-color: #013a6b;
+  background-image: -webkit-linear-gradient(-55deg, black 50%, #2bd483 50%);
+}
+
+.distinction__title {
+  position: relative;
+  color: #00263a;
+  border-bottom: 2px solid rgb(110, 231, 183);
+  padding-bottom: 5px;
+}
+</style>
