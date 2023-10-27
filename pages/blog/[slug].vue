@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import axios from "axios";
 import categoriesData from "~/data/blog/blogs.json";
 
 definePageMeta({
@@ -15,6 +14,7 @@ const { data: categoryDetail, error } = await useAsyncData(
     const category = categoriesData.find(
       (item) => item.slug === route.params.slug.toString()
     );
+
     if (!category) {
       showError({ message: "Page not found", statusCode: 404 });
     }

@@ -1,17 +1,11 @@
 <script lang="ts" setup>
-import axios from "axios";
-import { BlogCategoryDTO } from "~/types/Blog/BlogTypes";
+import blogs from "~/data/blog/blogs.json";
 
 definePageMeta({
   layout: "page",
 });
 
 const config = useRuntimeConfig().public;
-
-const { data: blogs } = await useAsyncData<BlogCategoryDTO | []>(
-  "categories",
-  () => $fetch(config.hostURL + "data/blog/blogs.json")
-);
 </script>
 
 <template>
@@ -21,9 +15,12 @@ const { data: blogs } = await useAsyncData<BlogCategoryDTO | []>(
         <li v-for="blog in blogs" :key="blog.blogCategoryId">
           <ul class="font-400 text-15px my-3">
             <li class="mb-2 cursor-pointer hover:text-emerald-300">
-              <NuxtLink :to="'/blog/' + blog.slug" :title="blog.metaTitle" rel="next">{{
-                blog.name
-              }}</NuxtLink>
+              <NuxtLink
+                :to="'/blog/' + blog.slug"
+                :title="blog.metaTitle"
+                rel="next"
+                >{{ blog.name }}</NuxtLink
+              >
             </li>
           </ul>
         </li>
