@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   nitro: {
     routeRules: {
       "/public/assets/**": { headers: { 'cache-control': `public,max-age=${31536000},s-maxage=${31536000}` } },
-      '/': { prerender: true },
+      '/': { isr: true },
     },
 },
 hooks: {
