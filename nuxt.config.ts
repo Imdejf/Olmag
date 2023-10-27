@@ -1,6 +1,7 @@
 import { GlobalSettings } from "./environmentsettings"
-// import { fetchCategories, fetchBlogs, fetchProducts } from "./static/api/getData"
+import { fetchCategories, fetchBlogs, fetchProducts } from "./static/api/getData"
 import { fetchSitemapProducts, fetchSitemapCategories, fetchSitemapBlogs, fetchSitemapPost } from "./static/api/getSitemap";
+import axios from "axios";
 
 const appEnv = process.env.ENV || 'development'
 
@@ -21,10 +22,10 @@ hooks: {
       //     return
       // }
       await siteMapGeneration();
-      // await saveDataToFile();
-      // const blogSlugs = await getBlogRoutes();
-      // const categorySlugs = await getCategory();
-      // nitroConfig.prerender.routes.push(...blogSlugs, ...categorySlugs)
+      await saveDataToFile();
+      const blogSlugs = await getBlogRoutes();
+      const categorySlugs = await getCategory();
+      nitroConfig.prerender.routes.push(...blogSlugs, ...categorySlugs)
       return
   }
 },
@@ -113,11 +114,32 @@ app: {
   
 })
 
-// const saveDataToFile = async () => {
-//   await fetchCategories(GlobalSettings[appEnv].storeId, GlobalSettings[appEnv].languageId, GlobalSettings[appEnv].apiBaseURL);
-//   await fetchBlogs(GlobalSettings[appEnv].storeId, GlobalSettings[appEnv].languageId, GlobalSettings[appEnv].apiBaseURL);
-//   await fetchProducts(GlobalSettings[appEnv].storeId, GlobalSettings[appEnv].languageId, GlobalSettings[appEnv].baseURL);
-// }
+const getBlogRoutes = async () => {
+  const blogsList = await axios.get(GlobalSettings[appEnv].apiBaseURL + 'product/blogCategory/slugs', {
+    params: {
+      storeId: GlobalSettings[appEnv].storeId,
+      build: true
+    }
+  })
+
+  return blogsList.data.map((category) => `/blog/${category}`);
+};
+
+const getCategory = async () => {
+  const categoryList = await axios.get(GlobalSettings[appEnv].apiBaseURL + 'product/category/slugs', {
+    params: {
+      storeId: GlobalSettings[appEnv].storeId,
+      build: true
+    }
+  })
+  return categoryList.data.map((category) => `/category/${category}`);
+};
+
+const saveDataToFile = async () => {
+  await fetchCategories(GlobalSettings[appEnv].storeId, GlobalSettings[appEnv].languageId, GlobalSettings[appEnv].apiBaseURL);
+  await fetchBlogs(GlobalSettings[appEnv].storeId, GlobalSettings[appEnv].languageId, GlobalSettings[appEnv].apiBaseURL);
+  await fetchProducts(GlobalSettings[appEnv].storeId, GlobalSettings[appEnv].languageId, GlobalSettings[appEnv].baseURL);
+}
 
 const siteMapGeneration = async () => {
   await fetchSitemapProducts(GlobalSettings[appEnv].storeId, GlobalSettings[appEnv].apiBaseURL)

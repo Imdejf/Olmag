@@ -45,8 +45,8 @@ useHead({
 <template>
   <PageWrapper>
     <PageBody>
-      <PageSection class="section__welcome bg-blue-900 text-emerald-400">
-        <div class="bg-cover bg-no-repeat bg-center h-full">
+      <PageSection class="section__welcome text-emerald-400">
+        <div class="bg-cover bg-no-repeat bg-blue-900 bg-center h-full">
           <div class="container mx-auto py-2">
             <header class="text-center mt-2">
               <h1 class="text-sm md:text-2xl md:font-bold">
@@ -60,6 +60,9 @@ useHead({
           </div>
         </div>
       </PageSection>
+      <!-- <PageSection>
+        <SwiperBanner />
+      </PageSection> -->
     </PageBody>
   </PageWrapper>
 </template>
