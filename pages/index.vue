@@ -209,7 +209,7 @@ useHead({
           </div>
         </div>
       </PageSection>
-      <PageSection class="section__most_view_category container mx-auto mt-10">
+      <PageSection class="section__most_view_category container mx-auto mt-8">
         <div class="px-2 md:px-0">
           <div class="tracking-1px font-semibold text-2xl">
             <div class="flex">
