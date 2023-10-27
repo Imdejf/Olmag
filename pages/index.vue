@@ -216,7 +216,7 @@ useHead({
               <h2 class="distinction__title mx-auto">Najczęściej odwiedzane</h2>
             </div>
             <div>
-              <GridCategoryMostView
+              <LazyGridCategoryMostView
                 :categories="categories?.filter((c) => c.mostVisited === true)"
               />
             </div>
