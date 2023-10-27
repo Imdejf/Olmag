@@ -127,43 +127,20 @@ useHead({
                       width="32"
                       height="32"
                       viewBox="0 0 24 24"
-                      class="w-6 md:w-7"
                     >
-                      <g fill="none" stroke="currentColor">
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
-                          d="M6 9h4"
-                          opacity=".5"
-                        />
-                        <path
-                          stroke-width="1.5"
-                          d="M20.833 10h-2.602C16.446 10 15 11.343 15 13s1.447 3 3.23 3h2.603c.084 0 .125 0 .16-.002c.54-.033.97-.432 1.005-.933c.002-.032.002-.071.002-.148v-3.834c0-.077 0-.116-.002-.148c-.036-.501-.465-.9-1.005-.933c-.035-.002-.076-.002-.16-.002Z"
-                        />
-                        <path
-                          stroke-width="1.5"
-                          d="M20.965 10c-.078-1.872-.328-3.02-1.137-3.828C18.657 5 16.771 5 13 5h-3C6.229 5 4.343 5 3.172 6.172C2 7.343 2 9.229 2 13c0 3.771 0 5.657 1.172 6.828C4.343 21 6.229 21 10 21h3c3.771 0 5.657 0 6.828-1.172c.809-.808 1.06-1.956 1.137-3.828"
-                        />
-                        <path
-                          stroke-linecap="round"
-                          stroke-width="1.5"
-                          d="m6 5l3.735-2.477a3.237 3.237 0 0 1 3.53 0L17 5"
-                          opacity=".5"
-                        />
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M17.991 13H18"
-                          opacity=".5"
-                        />
-                      </g>
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 9h8m-8 4h6m4-9a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-5l-5 3v-3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h12z"
+                      />
                     </svg>
                   </div>
                   <div class="block">
                     <span class="self-center text-[11px] md:text-lg w-full"
-                      >Duże oszczędności</span
+                      >Fachowe doradztwo</span
                     >
                   </div>
                 </div>
@@ -218,6 +195,151 @@ useHead({
             <div>
               <LazyGridCategoryMostView
                 :categories="categories?.filter((c) => c.mostVisited === true)"
+              />
+            </div>
+          </div>
+        </div>
+      </PageSection>
+      <PageSection>
+        <div class="relative bg-slate-300 w-full h-full">
+          <div class="grid md:grid-cols-3 md:flex">
+            <div class="w-[370px]">
+              <svg
+                class="md:relative max-w-md -ml-64"
+                style="position: absolute"
+                viewBox="0 0 423 423"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs>
+                  <linearGradient
+                    x1="100%"
+                    y1="0%"
+                    x2="4.48%"
+                    y2="0%"
+                    id="linearGradient-1"
+                  >
+                    <stop stop-color="#6ee7b7" offset="0%"></stop>
+                    <stop stop-color="#10b981" offset="100%"></stop>
+                  </linearGradient>
+                  <filter
+                    x="-9.3%"
+                    y="-6.7%"
+                    width="118.7%"
+                    height="118.7%"
+                    filterUnits="objectBoundingBox"
+                    id="filter-3"
+                  >
+                    <feOffset
+                      dy="8"
+                      in="SourceAlpha"
+                      result="shadowOffsetOuter1"
+                    ></feOffset>
+                    <feGaussianBlur
+                      stdDeviation="8"
+                      in="shadowOffsetOuter1"
+                      result="shadowBlurOuter1"
+                    ></feGaussianBlur>
+                    <feColorMatrix
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"
+                      in="shadowBlurOuter1"
+                    ></feColorMatrix>
+                  </filter>
+                  <rect
+                    id="path-2"
+                    x="63"
+                    y="504"
+                    width="300"
+                    height="300"
+                    rx="40"
+                  ></rect>
+                </defs>
+                <g
+                  id="Page-1"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                  opacity=".9"
+                >
+                  <g id="Desktop-HD" transform="translate(-39 -531)">
+                    <g id="Hero" transform="translate(43 83)">
+                      <g id="Rectangle-6" transform="rotate(45 213 654)">
+                        <use
+                          fill="#000"
+                          filter="url(#filter-3)"
+                          xlink:href="#path-2"
+                        ></use>
+                        <use
+                          fill="url(#linearGradient-1)"
+                          xlink:href="#path-2"
+                        ></use>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div
+              class="md:mt-[130px] text-center w-full relative my-10 md:my-0"
+            >
+              <h1
+                class="text-gray-900 z-40 font-black w-full text-3xl sm:text-3xl leading-tight relative mb-4 xl:mb-8"
+              >
+                Potrzebujesz pomocy lub wyceny?
+              </h1>
+              <p
+                class="text-lg sm:text-xl z-40 w-full xl:text-xl text-gray-600 mb-8 pr-0"
+              >
+                Skontaktuj się z nami.
+              </p>
+              <NuxtLink
+                to="/contact"
+                class="hover:cursor-pointer hover:opacity-[0.5] px-8 py-4 bg-blue-900 text-orange-500 rounded-xl font-semibold text-base"
+              >
+                <span class="uppercase">Kontakt</span>
+              </NuxtLink>
+            </div>
+            <div class="-mr-64 w-full h-36 p-[25px] md:h-auto hidden sm:flex">
+              <img
+                data-src="assets/content/macbook-olmag.webp"
+                class="lazyload hidden md:flex float-right h-[390px] w-[580px] m-auto"
+                alt="komputer ze stroną kontaktu"
+              />
+            </div>
+            <div class="block sm:hidden relative my-10 mx-auto">
+              <img
+                data-src="assets/content/macbook-olmag.webp"
+                class="lazyload block float-right w-[340px] h-[210px] m-auto"
+                alt="komputer ze stroną kontaktu"
+              />
+            </div>
+          </div>
+        </div>
+      </PageSection>
+      <PageSection class="section__category_awarded container mx-auto mt-8">
+        <div class="px-2 md:px-0">
+          <div class="tracking-1px font-semibold text-2xl">
+            <div class="flex">
+              <h2 class="distinction__title mx-auto">Wyróżnione kategorie</h2>
+            </div>
+            <div>
+              <GridCategoryAwarded
+                :categories="categories?.filter((c) => c.highlight === true)"
+              />
+            </div>
+          </div>
+        </div>
+      </PageSection>
+      <PageSection class="section__category_awarded bg-slate-300 mt-8 py-5">
+        <div class="px-2 md:px-0">
+          <div class="tracking-1px font-semibold text-2xl">
+            <div class="flex">
+              <h2 class="distinction__title mx-auto">Bestsellery</h2>
+            </div>
+            <div class="container mx-auto mt-8">
+              <LazyGridProductBestseller
+                :products="products?.filter((c) => c.isBestseller === true)"
               />
             </div>
           </div>
