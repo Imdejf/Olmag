@@ -43,7 +43,7 @@ const props = defineProps({
                 >
                   {{ product.oldPrice }} zł
                 </span>
-                <span class="text-xl font-bold text-blue-400 block">
+                <span class="text-xl font-bold text-blue-500 block">
                   {{ product.price.toFixed(2) }} zł
                 </span>
               </div>

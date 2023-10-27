@@ -345,6 +345,44 @@ useHead({
           </div>
         </div>
       </PageSection>
+      <PageSection class="section__category_awarded my-8">
+        <div class="px-2 md:px-0">
+          <div class="tracking-1px font-semibold text-2xl">
+            <div class="flex">
+              <h2 class="distinction__title mx-auto">Polecamy</h2>
+            </div>
+            <div class="container mx-auto">
+              <LazyGridProductRecommended
+                :products="
+                  products?.filter((c) => c.isHomePage === true).slice(0, 9)
+                "
+              />
+            </div>
+          </div>
+        </div>
+      </PageSection>
+      <PageSection class="section__blogs mt-8 pb-8 bg-white">
+        <div class="px-2 md:px-0">
+          <div class="tracking-1px font-semibold text-2xl">
+            <div class="text-center font-bold mt-10">
+              <span class="text-sm section-title uppercase text-gray-500">
+                Zobacz również...
+              </span>
+            </div>
+            <div class="flex">
+              <h2 class="distinction__title mx-auto">Blog magazynowy</h2>
+            </div>
+            <div class="mx-auto container">
+              <LazySwiperBlogCard :blogs="blogCategories" />
+            </div>
+          </div>
+        </div>
+      </PageSection>
+      <PageSection class="section__about-compnay bg-slate-200">
+        <div class="container m-auto">
+          <FormPageAbout />
+        </div>
+      </PageSection>
       <!-- <PageSection>
         <SwiperBanner />
       </PageSection> -->

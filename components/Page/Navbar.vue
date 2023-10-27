@@ -142,6 +142,7 @@ onMounted(() => {
               <button
                 @click="routeToSearch"
                 class="bg-primary border bg-green-200 border-primary text-white px-4 md:px-8 rounded-r-md hover:text-primary transition md:flex"
+                aria-label="search"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

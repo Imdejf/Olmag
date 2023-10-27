@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ProductAvailability } from "~/types/Product/productTypes.ts";
+import { ProductAvailability } from "~/types/Product/productTypes";
 
 const props = defineProps({
   products: {
@@ -72,7 +72,7 @@ function getProductAvailabilityDescription(
                 {{ product.name }}
               </h3>
               <p class="sr-only">Price</p>
-              <p class="text-blue-600 my-3 font-bold text-lg">
+              <p class="text-blue-500 my-3 font-bold text-lg">
                 {{ product.price.toFixed(2) }} zł
               </p>
             </div>
