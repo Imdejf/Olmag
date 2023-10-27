@@ -6,6 +6,7 @@ import axios from "axios";
 const appEnv = process.env.ENV || 'development'
 
 export default defineNuxtConfig({
+  ssr: false,
   devtools: { enabled: true },
   site: {
     url: GlobalSettings[appEnv].baseURL
@@ -14,6 +15,7 @@ export default defineNuxtConfig({
     routeRules: {
       "/public/assets/**": { headers: { 'cache-control': `public,max-age=${31536000},s-maxage=${31536000}` } },
       '/': { isr: true },
+      '/post/**' : { ssr: true }
     },
 },
 hooks: {
