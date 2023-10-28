@@ -193,7 +193,7 @@ useHead({
               <h2 class="distinction__title mx-auto">Najczęściej odwiedzane</h2>
             </div>
             <div>
-              <GridCategoryMostView
+              <LazyGridCategoryMostView
                 :categories="categories?.filter((c) => c.mostVisited === true)"
               />
             </div>
@@ -338,7 +338,7 @@ useHead({
               <h2 class="distinction__title mx-auto">Bestsellery</h2>
             </div>
             <div class="container mx-auto mt-8">
-              <GridProductBestseller
+              <LazyGridProductBestseller
                 :products="products?.filter((c) => c.isBestseller === true)"
               />
             </div>
@@ -352,7 +352,7 @@ useHead({
               <h2 class="distinction__title mx-auto">Polecamy</h2>
             </div>
             <div class="container mx-auto">
-              <GridProductRecommended
+              <LazyGridProductRecommended
                 :products="
                   products?.filter((c) => c.isHomePage === true).slice(0, 9)
                 "
@@ -373,7 +373,7 @@ useHead({
               <h2 class="distinction__title mx-auto">Blog magazynowy</h2>
             </div>
             <div class="mx-auto container">
-              <SwiperBlogCard :blogs="blogCategories" />
+              <LazySwiperBlogCard :blogs="blogCategories" />
             </div>
           </div>
         </div>
