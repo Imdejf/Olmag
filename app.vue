@@ -31,23 +31,7 @@ useHead({
 
 <template>
   <Html lang="pl">
-    <Body
-      class="text-blue-900 overflow-x-hidden font-nunito bg-gray-50"
-      :class="`${
-        application.topMenuIsOpen ? 'overflow-hidden wrapper-scroll' : ''
-      } ${cart.addCartResult ? 'overflow-hidden wrapper-scroll' : ''}
-      ${application.questionProduct ? 'overflow-hidden wrapper-scroll' : ''}`"
-    >
-      <div v-if="cart.addCartResult" class="relative" style="z-index: 9999">
-        <ModalAddToCartResult />
-      </div>
-      <div
-        v-if="application.questionProduct"
-        class="absolute"
-        style="z-index: 9999"
-      >
-        <ModalQuestionProduct />
-      </div>
+    <Body class="text-blue-900 overflow-x-hidden font-nunito bg-gray-50">
       <NuxtLayout>
         <NuxtPage />
       </NuxtLayout>
