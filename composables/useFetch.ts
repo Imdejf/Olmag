@@ -42,7 +42,6 @@ export function Fetch<T>(
     dsLanguage.value = config.languageId
   }
 
-  alert()
   useFetch( 'checkSession', {
     baseURL: config.apiBaseURL,
     method: 'GET', 
@@ -54,7 +53,6 @@ export function Fetch<T>(
         'Content-Type': 'application/json'
       }
   }).then((response) => {
-    alert("test")
       if(response.data && response.data != 'exist') {
           const customer = useCookie('dsCustomer', { maxAge: 182 * 24 * 60 * 12 * 2 })
       customer.value = response.data
