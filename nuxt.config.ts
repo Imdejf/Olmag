@@ -87,6 +87,7 @@ app: {
 
   modules: [
     'nuxt-jsonld',
+    'nuxt-swiper',
     '@pinia/nuxt',
     'nuxt-simple-sitemap',
     'nuxt-simple-robots',
@@ -95,6 +96,10 @@ app: {
       initialConsent: true,
     }],  
   ],
+
+  swiper: {
+    modules: ['navigation', 'pagination'],
+  },
   
   sitemap: {
     xsl: false,

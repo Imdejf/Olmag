@@ -1,10 +1,4 @@
 <script lang="ts" setup>
-// import Swiper core and required modules
-import { Navigation, Pagination } from "swiper/modules";
-
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from "swiper/vue";
-
 const props = defineProps({
   blogs: {
     type: Object,
@@ -14,7 +8,7 @@ const props = defineProps({
 </script>
 <template>
   <Swiper
-    :modules="[Navigation, Pagination]"
+    :modules="[SwiperNavigation, SwiperPagination]"
     :breakpoints="{
       '640': {
         slidesPerView: 2,
