@@ -63,7 +63,7 @@ const props = defineProps({
                 >
                   {{ product.oldPrice }} zł
                 </span>
-                <span class="text-xl font-bold text-blue-400 block">
+                <span class="text-xl font-bold text-blue-500 block">
                   {{ product.price.toFixed(2) }} zł
                 </span>
               </div>
@@ -71,7 +71,7 @@ const props = defineProps({
             <div class="pt-3">
               <NuxtLink
                 :to="'/' + product.slug"
-                class="block w-full text-center text-white rounded-xl font-600 bg-emerald-500 hover:bg-emerald-400/90 py-4 text-sm md:text-14px font-medium"
+                class="block w-full text-center text-blue-900 rounded-xl font-600 bg-emerald-400 hover:bg-emerald-300/90 py-4 text-sm md:text-14px font-bold"
               >
                 Sprawdź produkt!
               </NuxtLink>
