@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ProductAvailability } from "~/types/Product/productTypes";
+import { ProductAvailability } from "~/types/product/productTypes";
 
 const props = defineProps({
   products: {

@@ -29,6 +29,7 @@
     "lazysizes": "^5.3.2",
     "nuxt-jsonld": "^2.0.8",
     "nuxt-swiper": "^1.2.2",
-    "pinia": "^2.1.7"
+    "pinia": "^2.1.7",
+    "vue-easy-lightbox": "^1.16.0"
   }
 }

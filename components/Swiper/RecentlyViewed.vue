@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import productsData from "~/data/product/products.json";
-import { ProductDTO } from "~/types/Product/productTypes";
+import type { ProductDTO } from "~/types/product/productTypes";
 
 // import Swiper core and required modules
 import { Navigation, Pagination } from "swiper/modules";

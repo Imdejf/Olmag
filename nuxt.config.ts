@@ -98,7 +98,7 @@ app: {
   ],
 
   swiper: {
-    modules: ['navigation', 'pagination'],
+    modules: ['navigation', 'pagination', 'thumbs', 'free-mode'],
   },
   
   sitemap: {

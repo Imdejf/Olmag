@@ -1,13 +1,9 @@
 <script lang="ts" setup>
-import { Category } from "~/types/Category/categoryTypes";
+import type { Category } from "@/types/category/categoryTypes";
 import categoriesData from "~/data/category/categories.json";
 
 const config = useRuntimeConfig().public;
 
-// const { data: categories } = await useAsyncData<Category | []>(
-//   "categories",
-//   () => $fetch(config.hostURL + "data/category/categories.json")
-// );
 const { data: categories, error } = await useAsyncData<Category | []>(
   "categoriesNavigation",
   async () => {
