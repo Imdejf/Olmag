@@ -407,6 +407,7 @@ const addToCart = () => {
                         <p class="self-center">Kup i zapłać później</p>
                         <img
                           src="/assets/paypo.png"
+                          alt="Płatność za pomocą PayPo"
                           class="max-h-[30px] w-auto"
                           width="273"
                           height="76"
@@ -573,7 +574,7 @@ const addToCart = () => {
                         Zobacz również...
                       </p>
                       <div class="bg-slate-300 p-5">
-                        <SwiperProductRelated
+                        <LazySwiperProductRelated
                           :products="product.relatedProducts"
                         />
                       </div>
