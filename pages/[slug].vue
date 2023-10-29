@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { ProductDetailDTO } from "~/types/Product/productDetailTypes";
-import { ProductAvailability } from "~/types/product/productTypes";
+import { ProductAvailability } from "../types/product/productTypes";
 import { useCart } from "~/stores/cart";
 import { useApplication } from "~/stores/application";
 import axios from "axios";
