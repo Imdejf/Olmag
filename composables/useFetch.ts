@@ -1,6 +1,7 @@
 import { UseFetchOptions } from '#app'
 import { NitroFetchRequest } from 'nitropack'
 import { KeyOfRes } from 'nuxt/dist/app/composables/asyncData'
+import axios from "axios"; 
 
 export function Fetch<T>(
   request: NitroFetchRequest,
@@ -41,24 +42,23 @@ export function Fetch<T>(
   if(!dsLanguage.value) {
     dsLanguage.value = config.languageId
   }
-
-  useFetch( 'checkSession', {
-    baseURL: config.apiBaseURL,
-    method: 'GET', 
-    headers: {
-        dsstore: config.storeId,
-        dslanguage: config.languageId,
-        dsCustomer: useCookie('dsCustomer').value ?? '',
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json'
-      }
-  }).then((response) => {
+ 
+  if(process.client && checkSession) {
+      $axios('checkSession', {
+        headers: {
+          dsstore: config.storeId,
+          dslanguage: config.languageId,
+          dsCustomer: useCookie('dsCustomer').value,
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json'
+        },
+      }).then((response => {
       if(response.data && response.data != 'exist') {
-          const customer = useCookie('dsCustomer', { maxAge: 182 * 24 * 60 * 12 * 2 })
-      customer.value = response.data
-    }
-  })
-  
+        const customer = useCookie('dsCustomer', { maxAge: 182 * 24 * 60 * 12 * 2 })
+        customer.value = response.data
+      }
+    }))
+  }
   //@ts-ignore
   return useFetch<T>(request, {
     baseURL: config.apiBaseURL,
