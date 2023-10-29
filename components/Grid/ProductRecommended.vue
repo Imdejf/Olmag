@@ -94,7 +94,7 @@ function getProductAvailabilityDescription(
             <div class="mt-1.5 sm:mt-0">
               <p class="text-gray-500">Dostępność</p>
 
-              <p class="font-bold text-emerald-500">
+              <p class="font-bold text-blue-700">
                 {{
                   getProductAvailabilityDescription(product.productAvailability)
                 }}
@@ -120,7 +120,7 @@ function getProductAvailabilityDescription(
 
             <div class="mt-1.5 sm:mt-0">
               <p class="text-gray-500">Wyprodukowano</p>
-              <p class="font-bold text-emerald-500">Unia europejska</p>
+              <p class="font-bold text-blue-700">Unia europejska</p>
             </div>
           </div>
         </div>

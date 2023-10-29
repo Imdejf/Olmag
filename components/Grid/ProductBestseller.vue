@@ -39,7 +39,7 @@ const props = defineProps({
               >
                 <span
                   v-if="product.oldPrice"
-                  class="text-xs text-red-500 font-semibold ml-7 line-through absolute -top-1"
+                  class="text-xs text-red-600 font-semibold ml-7 line-through absolute -top-1"
                 >
                   {{ product.oldPrice }} zł
                 </span>
