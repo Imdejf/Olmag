@@ -114,7 +114,7 @@ onMounted(() => {
             <img
               src="/assets/logo-mobile.webp"
               class="block md:hidden"
-              height="100"
+              height="93"
               width="280"
               alt="Logo Olmag.pl"
             />
