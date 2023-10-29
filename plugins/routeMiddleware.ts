@@ -1,5 +1,3 @@
-import axios from "axios"
-
 export default defineNuxtPlugin(() => {
     addRouteMiddleware('global-middleware',async (to, from) => {
       const cookieStore = useCookie('dsStore', {
@@ -33,7 +31,7 @@ export default defineNuxtPlugin(() => {
       }
       //@ts-ignore
       if(!cookieUser.value && process.client) {
-        axios('checkSession', {
+        $axios('checkSession', {
           headers: {
             dsstore: config.storeId,
             dslanguage: config.languageId,
