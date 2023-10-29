@@ -21,7 +21,7 @@
               class="absolute mt-1 right-1 rounded-full bg-emerald-700 px-5 py-3 text-sm font-600 text-white transition hover:bg-emerald-500"
               type="button"
             >
-              Subscribe
+              Subskrybuj
             </button>
           </div>
         </form>
