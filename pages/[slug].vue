@@ -496,12 +496,12 @@ const addToCart = () => {
                       <FormQuantityInput
                         @update:value="productQuantity = $event"
                       />
-                      <a
+                      <button
                         class="w-full block text-center rounded bg-emerald-400 hover:bg-emerald-500 px-6 py-3 text-xs md:text-sm font-bold uppercase tracking-wide text-white"
                         @click="handleButtonClick()"
                       >
                         Dodaj do koszyka
-                      </a>
+                      </button>
                     </div>
                     <div class="flex gap-2 text-orange-400">
                       <button
