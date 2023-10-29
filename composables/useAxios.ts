@@ -8,7 +8,7 @@ export function $axios(endpoint:string, opts?) {
        dsstore: config.storeId,
        dslanguage: config.languageId,
       }, 
-      withCredentials: true,
+      withCredentials: false,
       ...opts
    });
    return axiosInstance.get(endpoint)

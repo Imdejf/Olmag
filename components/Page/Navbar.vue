@@ -26,7 +26,7 @@ const openShoppingCart = () => {
 };
 
 if (useCookie("dsCustomer").value) {
-  //cart.initCartBadge();
+  cart.initCartBadge();
 }
 
 const hideResult = () => {
