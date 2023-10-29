@@ -1,5 +1,4 @@
 import axios from "axios"
-import { Fetch } from '~/composables/useFetch'
 
 export default defineNuxtPlugin(() => {
     addRouteMiddleware('global-middleware',async (to, from) => {
@@ -34,7 +33,7 @@ export default defineNuxtPlugin(() => {
       }
       //@ts-ignore
       if(!cookieUser.value && process.client) {
-        $axios('checkSession', {
+        axios('checkSession', {
           headers: {
             dsstore: config.storeId,
             dslanguage: config.languageId,
