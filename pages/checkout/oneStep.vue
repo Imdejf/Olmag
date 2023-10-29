@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { Field, configure } from "vee-validate";
+import { ref, computed } from "vue";
 import { object, array, boolean, string, ref as yupRef } from "yup";
 import {
   Combobox,
@@ -11,12 +12,8 @@ import {
   TransitionRoot,
 } from "@headlessui/vue";
 import { useCart } from "~/stores/cart";
-import type {
-  Order,
-  Address,
-  DeliveryMethodType,
-  Payment,
-} from "~/types/Order/order";
+import type { Order, Address } from "~/types/Order/order";
+import { DeliveryMethodType, Payment } from "~/types/Order/order";
 
 export interface ISectionItem {
   id: number;
@@ -37,9 +34,11 @@ definePageMeta({
 const cart = useCart();
 
 const showSpinner = ref(false);
+const errorMessage = ref(false);
+const errorModal = ref(true);
 const acceptMarketing = ref(false);
 const acceptRegulations = ref(false);
-const useShippingAddressAsBillingAddress = ref(true);
+const useShippingAddressAsBillingAddress = ref(false);
 
 const invoiceIsCompany = ref(true);
 
@@ -297,87 +296,99 @@ const changePaymentMethod = (value: number) => {
 };
 
 const handleOrder = async (values, actions) => {
-  if (selected.value == null) {
-    isSelected.value = false;
-    return;
-  }
-  isSelected.value = true;
-  showSpinner.value = true;
-  const dsUser = useCookie("dsCustomer");
-  const countryId = "0b64292c-e249-4906-ab48-429441745899";
-  const languageId = useCookie("dsLanguage");
-  const order: Order = {
-    userId: dsUser.value,
-    languageId: languageId.value,
-    newAddress: {
-      companyName: values.companyName,
-      firstName: values.firstName,
-      lastName: values.lastName,
-      email: values.email,
-      nip: values.nip,
-      phone: values.phone,
-      addressLine1: values.addressLine1,
-      addressLine2: "",
-      zipCode: values.postalCode,
-      city: values.city,
-      stateOrProvinceId: selected.value.id,
-      countryId: countryId,
-    },
-    useShippingAddressAsBillingAddress:
-      useShippingAddressAsBillingAddress.value,
-    makeInvoiceVAT: true,
-    acceptRegulations: values.acceptRegulations,
-    acceptMarketing: values.acceptMarketing,
-    orderNote: cart.cart?.orderNote ? cart.cart?.orderNote : "",
-    deliveryMethod: +values.deliveryMethod,
-    payment: +values.paymentMethod,
-    shippingMethod: DeliveryMethodType[+values.deliveryMethod],
-    ExistingShippingAddresses: [],
-  };
-
-  if (useShippingAddressAsBillingAddress.value === false) {
-    order.newBillingAddress = {
-      companyName: values.billingAddress.companyName,
-      firstName: values.billingAddress.firstName,
-      lastName: values.billingAddress.lastName,
-      email: values.billingAddress.email,
-      nip: values.billingAddress.nip,
-      phone: values.billingAddress.phone,
-      addressLine1: values.billingAddress.addressLine1,
-      addressLine2: "",
-      zipCode: values.postalCode,
-      city: values.billingAddress.city,
-      stateOrProvinceId: selected.value.id,
-      // stateOrProvinceId: values.billingAddress.stateOrProvinceId,
-      countryId: countryId,
-    };
-  }
-
-  const orderId = await Fetch("/product/checkout/shipping", {
-    method: "post",
-    body: order,
-  });
-
-  if (+values.paymentMethod === 0 || 2) {
-    await Fetch("/v1/PaymentPrzelewy/RegisterTransactionP24", {
-      method: "post",
-      body: {
-        storeId: useCookie("dsStore"),
-        userId: useCookie("dsCustomer"),
-        orderId: orderId.data.value.data,
+  try {
+    if (selected.value == null) {
+      isSelected.value = false;
+      return;
+    }
+    isSelected.value = true;
+    showSpinner.value = true;
+    const dsUser = useCookie("dsCustomer");
+    const countryId = "0b64292c-e249-4906-ab48-429441745899";
+    const languageId = useCookie("dsLanguage");
+    const order: Order = {
+      userId: dsUser.value,
+      languageId: languageId.value,
+      newAddress: {
+        companyName: values.companyName,
+        firstName: values.firstName,
+        lastName: values.lastName,
+        email: values.email,
+        nip: values.nip,
+        phone: values.phone,
+        addressLine1: values.addressLine1,
+        addressLine2: "",
+        zipCode: values.postalCode,
+        city: values.city,
+        stateOrProvinceId: selected.value.id,
+        countryId: countryId,
       },
-    }).then((response) => {
-      if (+values.paymentMethod === 0) {
-        const externalUrl = response.data.value.data;
-        window.location.href = externalUrl;
-      } else if (+values.paymentMethod === 2) {
-        navigateTo("/checkout/summary?orderId=" + orderId.data.value.data);
-      }
+      useShippingAddressAsBillingAddress:
+        useShippingAddressAsBillingAddress.value,
+      makeInvoiceVAT: true,
+      acceptRegulations: values.acceptRegulations,
+      acceptMarketing: values.acceptMarketing,
+      orderNote: cart.cart?.orderNote ? cart.cart?.orderNote : "",
+      deliveryMethod: +values.deliveryMethod,
+      payment: +values.paymentMethod,
+      shippingMethod: DeliveryMethodType[+values.deliveryMethod],
+      ExistingShippingAddresses: [],
+    };
+
+    if (useShippingAddressAsBillingAddress.value === true) {
+      order.newBillingAddress = {
+        companyName: values.billingAddress.companyName,
+        firstName: values.billingAddress.firstName,
+        lastName: values.billingAddress.lastName,
+        email: values.billingAddress.email,
+        nip: values.billingAddress.nip,
+        phone: values.billingAddress.phone,
+        addressLine1: values.billingAddress.addressLine1,
+        addressLine2: "",
+        zipCode: values.postalCode,
+        city: values.billingAddress.city,
+        stateOrProvinceId: selected.value.id,
+        // stateOrProvinceId: values.billingAddress.stateOrProvinceId,
+        countryId: countryId,
+      };
+    }
+
+    const orderId = await Fetch("/product/checkout/shipping", {
+      method: "post",
+      body: order,
     });
-  } else {
-    navigateTo("/checkout/summary?orderId=" + orderId.data.value.data);
+
+    if (+values.paymentMethod === 0 || 2) {
+      await Fetch("/v1/PaymentPrzelewy/RegisterTransactionP24", {
+        method: "post",
+        body: {
+          storeId: useCookie("dsStore"),
+          userId: useCookie("dsCustomer"),
+          orderId: orderId.data.value.data,
+        },
+      })
+        .then((response) => {
+          if (+values.paymentMethod === 0) {
+            const externalUrl = response.data.value.data;
+            window.location.href = externalUrl;
+          } else if (+values.paymentMethod === 2) {
+            navigateTo("/checkout/summary?orderId=" + orderId.data.value.data);
+          }
+        })
+        .catch((error) => {
+          errorMessage.value = true;
+          errorModal.value = true;
+          showSpinner.value = false;
+        });
+    } else {
+      navigateTo("/checkout/summary?orderId=" + orderId.data.value.data);
+    }
+    showSpinner.value = false;
+  } catch {
+    errorMessage.value = true;
+    errorModal.value = true;
+    showSpinner.value = false;
   }
-  showSpinner.value = false;
 };
 </script>
 <template>
@@ -386,6 +397,9 @@ const handleOrder = async (values, actions) => {
       <BannerSteps :value="2" />
     </PageHeader>
     <PageBody>
+      <span v-if="errorModal" class="">
+        <ModalError @update:value="errorModal = $event" />
+      </span>
       <VForm
         ref="form"
         :validation-schema="schema"
@@ -662,7 +676,7 @@ const handleOrder = async (values, actions) => {
                       <div class="form-group form-check text-lefty mt-4">
                         <label
                           class="form-check-label inline-block text-gray-800 cursor-pointer"
-                          >Dane na fakturze takie same jak dane dostawy?</label
+                          >Dostawa pod inny adres?</label
                         >
                         <div>
                           <Switch
@@ -685,9 +699,6 @@ const handleOrder = async (values, actions) => {
                               class="inline-block h-4 w-4 transform rounded-full bg-white transition"
                             />
                           </Switch>
-                          <span class="ml-2">{{
-                            billingAnotherAddress ? "Tak" : "Nie"
-                          }}</span>
                         </div>
                       </div>
                       <div v-show="billingAnotherAddress">
@@ -1408,13 +1419,23 @@ const handleOrder = async (values, actions) => {
                         </div>
                         <div class="border-b border-gray-400 mt-7">
                           <button
-                            class="items-center rounded border-2 w-full border-emerald-400 px-8 py-3 text-white bg-emerald-400 hover:bg-white hover:text-emerald-400 focus:outline-none focus:ring duration-400"
+                            :disabled="errorMessage"
+                            class="items-center rounded border-2 w-full px-8 py-3 focus:outline-none focus:ring duration-400"
+                            :class="`${
+                              errorMessage
+                                ? 'border-gray-200 bg-gray-300/60 text-black'
+                                : 'border-emerald-400 bg-emerald-400 text-white hover:text-emerald-400 hover:bg-white'
+                            }`"
                           >
                             <span
                               v-show="!showSpinner"
                               class="text-sm font-semibold uppercase"
                             >
-                              Zamawiam i płacę
+                              {{
+                                errorMessage
+                                  ? "Coś poszło nie tak"
+                                  : "Zamawiam i płacę"
+                              }}
                             </span>
                             <Icon
                               v-show="!showSpinner"
@@ -1438,13 +1459,22 @@ const handleOrder = async (values, actions) => {
                                   fill="currentFill"
                                 />
                               </svg>
-                              <span class="text-14px"
+                              <span class="sr-only">Loading...</span>
+                              <span class="text-[15px]"
                                 >Przetwarzanie zamówienia...</span
                               >
-                              <span class="sr-only">Loading...</span>
                             </div>
                           </button>
                         </div>
+                        <span v-if="errorMessage" class="text-red-500"
+                          >Wystąpił problem podczas składania zamówienia
+                          <span
+                            @click="errorModal = true"
+                            class="text-emerald-400 cursor-pointer"
+                            >KLIKNIJ</span
+                          >
+                          i sprawdź co dalej</span
+                        >
                         <div
                           class="text-12px text-gray-500 leading-5 mt-3 text-font"
                         >
