@@ -2,6 +2,10 @@
 import { defineProps, defineEmits } from "vue";
 
 const props = defineProps({
+  index: {
+    type: Number,
+    default: 1,
+  },
   value: {
     type: Number,
     default: 1,
@@ -21,7 +25,7 @@ function updateValue(value: number) {
     <div class="flex w-full h-full items-center gap-1">
       <input
         type="number"
-        id="Quantity"
+        :id="'Quantity' + index"
         :max="10"
         :value="value"
         @input="updateValue($event.target.value)"

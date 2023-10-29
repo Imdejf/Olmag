@@ -31,6 +31,7 @@ const { data: categories, error } = await useAsyncData<Category | []>(
             <img
               class="w-[30px] h-[30px]"
               :src="category.thumbnailImage.filePath"
+              :alt="category.thumbnailImage.altAttribute"
             />
             {{ category.name }}
           </NuxtLink>

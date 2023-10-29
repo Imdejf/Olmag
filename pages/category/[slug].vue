@@ -395,8 +395,8 @@ onMounted(() => {
               <div class="py-5 md:pb-5 block md:flex items-center justify-end">
                 <div class="mr-5">
                   <select
-                    name="SearchFilterProduct"
                     id="SearchFilterProduct"
+                    name="SearchFilterProduct"
                     class="w-full h-full rounded-lg border-[1.5px] p-1 border-gray-300 text-gray-700 sm:text-sm"
                     v-model="selectedSort"
                     @change="updateSort"
@@ -412,12 +412,14 @@ onMounted(() => {
                     class="form-group form-check text-center flex items-center"
                   >
                     <input
+                      id="isNewCheckbox"
                       type="checkbox"
                       class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-emerald-400 checked:bg-emerald-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer"
                       v-model="isNew"
                       @change="updateIsNew"
                     />
                     <label
+                      for="isNewCheckbox"
                       class="form-check-label mr-5 inline-block text-gray-800 cursor-pointer text-xs"
                       >Nowości</label
                     >
@@ -426,12 +428,14 @@ onMounted(() => {
                     class="form-group form-check text-center flex items-center"
                   >
                     <input
+                      id="salesCheckbox"
                       type="checkbox"
                       class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-emerald-400 checked:bg-emerald-400 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer"
                       v-model="isSales"
                       @change="updateIsSales"
                     />
                     <label
+                      for="salesCheckbox"
                       class="form-check-label mr-5 inline-block text-gray-800 cursor-pointer text-xs"
                       >Promocje</label
                     >
@@ -453,7 +457,7 @@ onMounted(() => {
           >
             <div
               v-if="categoryDetail?.products.length != 0"
-              v-for="product in productResult"
+              v-for="(product, index) in productResult"
               :key="product.id"
               class="mb-7"
             >
@@ -710,6 +714,7 @@ onMounted(() => {
 
                     <div class="mt-3 w-full flex justify-center">
                       <FormQuantityInput
+                        :index="index"
                         class="w-1/5 md:w-1/3"
                         @update:value="product.stockQuantity = $event"
                       />
