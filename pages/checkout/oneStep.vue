@@ -11,7 +11,7 @@ import {
   TransitionRoot,
 } from "@headlessui/vue";
 import { useCart } from "~/stores/cart";
-import {
+import type {
   Order,
   Address,
   DeliveryMethodType,
@@ -302,7 +302,6 @@ const handleOrder = async (values, actions) => {
     return;
   }
   isSelected.value = true;
-console.log(values)
   showSpinner.value = true;
   const dsUser = useCookie("dsCustomer");
   const countryId = "0b64292c-e249-4906-ab48-429441745899";
