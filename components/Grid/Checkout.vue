@@ -62,13 +62,14 @@ function removeItem(id: number) {
             <div class="flex flex-col justify-between w-full pb-4">
               <div class="flex justify-between w-full pb-2 space-x-2">
                 <div class="space-y-1">
-                  <h3
+                  <NuxtLink
+                    :to="'/' + product.slug"
                     class="text-sm md:text-lg font-semibold leading-snug sm:pr-8"
                   >
                     {{ product.productName }}
-                  </h3>
+                  </NuxtLink>
                   <p class="text-sm">
-                    {{ item.brandName ?? "olmag" }}
+                    <!-- {{ item.brandName ? "Olmag" : "Olmag" }} -->
                   </p>
                 </div>
                 <div class="text-right">
