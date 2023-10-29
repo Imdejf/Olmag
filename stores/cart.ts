@@ -67,11 +67,10 @@ export const useCart = defineStore({
           //   }
           // })
           // this.setTotalCount(response.data)
-          var response = Fetch('/product/shoppingcart/CartBadge', { method: 'get', params: {
+          var response = await $axios('/product/shoppingcart/CartBadge', { method: 'get', params: {
             userId: useCookie("dsCustomer").value
           }})
-
-          this.setTotalCount(response?.data?.value)
+          this.setTotalCount(response?.data)
         } catch (error) {
           console.error(error)
         }
@@ -171,8 +170,7 @@ export const useCart = defineStore({
     async addToCart(item: CartItem): Promise<void> {
       const config = useRuntimeConfig().public;
       const dsCustomer = useCookie('dsCustomer')
-      this.setAddCartResult()
-      Fetch('/product/shoppingcart/Add', { method: 'post', body: {
+      await Fetch('/product/shoppingcart/Add', { method: 'post', body: {
         productId: item.id,
         storeId: config.storeId,
         userId: dsCustomer,
@@ -190,6 +188,8 @@ export const useCart = defineStore({
       }
 
       this.setLastAddedItem(cartItem)
+      this.setAddCartResult()
+
     },
 
     removeFromCart(id: string): void {

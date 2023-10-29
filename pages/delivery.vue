@@ -30,7 +30,7 @@ definePageMeta({
                   roboczych, od poniedziałku do piątku.
                 </p>
                 <p class="mt-5">
-                  Jeśli zamówienie zostanie złożone do godziny 14.00 i wybrany
+                  Jeśli zamówienie zostanie złożone do godziny 14:00 i wybrany
                   produkt jest dostępny w magazynie, realizacja nastąpi tego
                   samego dnia w ziąwzku z czym przesyłka zostanie oddana
                   kurierowi w tym samym dniu bądź w następnym dniu roboczym.
