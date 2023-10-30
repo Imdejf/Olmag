@@ -20,9 +20,9 @@ export default defineNuxtConfig({
 },
 hooks: {
   async 'nitro:config'(nitroConfig) {
-      // if (nitroConfig.dev) {
-      //     return
-      // }
+      if (nitroConfig.dev) {
+          return
+      }
       await siteMapGeneration();
       await saveDataToFile();
       const blogSlugs = await getBlogRoutes();

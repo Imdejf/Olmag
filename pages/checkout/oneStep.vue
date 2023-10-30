@@ -35,7 +35,7 @@ const cart = useCart();
 
 const showSpinner = ref(false);
 const errorMessage = ref(false);
-const errorModal = ref(true);
+const errorModal = ref(false);
 const acceptMarketing = ref(false);
 const acceptRegulations = ref(false);
 const useShippingAddressAsBillingAddress = ref(false);
