@@ -38,7 +38,7 @@ const errorMessage = ref(false);
 const errorModal = ref(false);
 const acceptMarketing = ref(false);
 const acceptRegulations = ref(false);
-const useShippingAddressAsBillingAddress = ref(false);
+const useShippingAddressAsBillingAddress = ref(true);
 
 const invoiceIsCompany = ref(true);
 
@@ -133,30 +133,28 @@ const initialValues = {
   invoiceIsCompany: true,
   paymentMethodChecked: paymentMethodChecked.value,
   deliveryMethodChecked: deliveryMethodChecked.value,
-  billingAnotherAddress: false,
-  billingAnotherAddressIsCompany: true,
-  email: "",
-  companyName: "",
-  nip: "",
-  firstName: "",
-  lastName: "",
-  phone: "",
-  addressLine1: "",
-  postalCode: "",
+  shippingAnotherAddress: false,
+  shippingAnotherAddressIsCompany: true,
+  email: "jablonskidawid0202@gmail.com",
+  companyName: "DataSharp",
+  nip: "1231231231",
+  firstName: "Dawid",
+  lastName: "Jabłoński",
+  phone: "698304621",
+  addressLine1: "Polna 6 ",
+  postalCode: "66-340",
   // country: '',
-  city: "",
-  addresses: [
-    {
-      company: "",
-      firstName: "",
-      lastName: "",
-      phone: "",
-      addressLine1: "",
-      postalCode: "",
-      // country: '',
-      city: "",
-    },
-  ],
+  city: "Przytoczna",
+  shippingAddress: {
+    companyName: "",
+    firstName: "",
+    lastName: "",
+    phone: "",
+    addressLine1: "",
+    postalCode: "",
+    // country: '',
+    city: "",
+  },
   paymentMethod: "",
   deliveryMethod: "",
   acceptMarketing: false,
@@ -230,11 +228,11 @@ const schema = object({
   //country: string().required().label('Country'),
   city: string().required("Uzupełnij miasto"),
   addressLine1: string().required("Uzupełnij adres"),
-  billingAddress: object().when("billingAnotherAddress", {
+  shippingAddress: object().when("shippingAnotherAddress", {
     is: true,
     then: () =>
       object().shape({
-        companyName: string().required("Uzupełnij imię."),
+        firstName: string().required("Uzupełnij imię."),
         lastName: string().required("Uzupełnij nazwisko."),
         phone: string().required("Uzupełnij numer telefonu."),
         addressLine1: string().required("Uzupełnij adres."),
@@ -256,16 +254,22 @@ const onlySelectedHandle = () => {
   selectAll.value = false;
 };
 
-const billingAnotherAddress = ref(false);
+const shippingAnotherAddress = ref(false);
 
-const billingAnotherAddressHandle = () => {
-  billingAnotherAddress.value = !billingAnotherAddress.value;
+const form = ref(null);
+
+const shippingAnotherAddressHandle = () => {
+  shippingAnotherAddress.value = !shippingAnotherAddress.value;
+  form.value.setValues({
+    shippingAnotherAddress: shippingAnotherAddress.value,
+  });
 };
 
-const billingAnotherAddressIsCompany = ref(true);
+const shippingAnotherAddressIsCompany = ref(true);
 
-const billingAnotherAddressIsCompanyHandle = () => {
-  billingAnotherAddressIsCompany.value = !billingAnotherAddressIsCompany.value;
+const shippingAnotherAddressIsCompanyHandle = () => {
+  shippingAnotherAddressIsCompany.value =
+    !shippingAnotherAddressIsCompany.value;
 };
 
 const changeDeliveryMethod = (value: number) => {
@@ -296,6 +300,7 @@ const changePaymentMethod = (value: number) => {
 };
 
 const handleOrder = async (values, actions) => {
+  console.log(values);
   try {
     if (selected.value == null) {
       isSelected.value = false;
@@ -309,7 +314,7 @@ const handleOrder = async (values, actions) => {
     const order: Order = {
       userId: dsUser.value,
       languageId: languageId.value,
-      newAddress: {
+      billingAddress: {
         companyName: values.companyName,
         firstName: values.firstName,
         lastName: values.lastName,
@@ -334,24 +339,27 @@ const handleOrder = async (values, actions) => {
       shippingMethod: DeliveryMethodType[+values.deliveryMethod],
       ExistingShippingAddresses: [],
     };
+    console.log(order);
 
-    if (useShippingAddressAsBillingAddress.value === true) {
-      order.newBillingAddress = {
-        companyName: values.billingAddress.companyName,
-        firstName: values.billingAddress.firstName,
-        lastName: values.billingAddress.lastName,
-        email: values.billingAddress.email,
-        nip: values.billingAddress.nip,
-        phone: values.billingAddress.phone,
-        addressLine1: values.billingAddress.addressLine1,
+    if (useShippingAddressAsBillingAddress.value === false) {
+      order.ShippingAddress = {
+        companyName: values.shippingAddress.companyName,
+        firstName: values.shippingAddress.firstName,
+        lastName: values.shippingAddress.lastName,
+        email: values.shippingAddress.email,
+        nip: values.shippingAddress.nip,
+        phone: values.shippingAddress.phone,
+        addressLine1: values.shippingAddress.addressLine1,
         addressLine2: "",
-        zipCode: values.postalCode,
-        city: values.billingAddress.city,
+        zipCode: values.shippingAddress.postalCode,
+        city: values.shippingAddress.city,
         stateOrProvinceId: selected.value.id,
         // stateOrProvinceId: values.billingAddress.stateOrProvinceId,
         countryId: countryId,
       };
     }
+
+    console.log(order);
 
     const orderId = await Fetch("/product/checkout/shipping", {
       method: "post",
@@ -456,7 +464,7 @@ const handleOrder = async (values, actions) => {
                     <div class="bg-white">
                       <div>
                         <h2 class="font-semibold text-xl mb-4">
-                          1. Twoje dane
+                          1. Dane odbiorcy towaru
                         </h2>
                       </div>
                       <div class="border-b border-gray-400">
@@ -681,11 +689,11 @@ const handleOrder = async (values, actions) => {
                         <div>
                           <Switch
                             v-model="useShippingAddressAsBillingAddress"
-                            @click="billingAnotherAddressHandle"
+                            @click="shippingAnotherAddressHandle"
                             :class="
                               useShippingAddressAsBillingAddress
-                                ? 'bg-emerald-400'
-                                : 'bg-gray-200'
+                                ? 'bg-gray-200'
+                                : 'bg-emerald-400'
                             "
                             class="relative inline-flex h-6 w-11 items-center rounded-full"
                           >
@@ -693,21 +701,21 @@ const handleOrder = async (values, actions) => {
                             <span
                               :class="
                                 useShippingAddressAsBillingAddress
-                                  ? 'translate-x-6'
-                                  : 'translate-x-1'
+                                  ? 'translate-x-1'
+                                  : 'translate-x-6'
                               "
                               class="inline-block h-4 w-4 transform rounded-full bg-white transition"
                             />
                           </Switch>
                         </div>
                       </div>
-                      <div v-show="billingAnotherAddress">
+                      <div v-show="shippingAnotherAddress">
                         <div class="my-4">
                           <div class="flex items-center justify-center">
                             <Field
                               type="radio"
-                              name="billingAnotherAddressIsCompany"
-                              @click="billingAnotherAddressIsCompanyHandle"
+                              name="shippingAnotherAddressIsCompany"
+                              @click="shippingAnotherAddressIsCompanyHandle"
                               :value="false"
                             />
                             <label
@@ -717,8 +725,8 @@ const handleOrder = async (values, actions) => {
                             >
                             <Field
                               type="radio"
-                              name="billingAnotherAddressIsCompany"
-                              @click="billingAnotherAddressIsCompanyHandle"
+                              name="shippingAnotherAddressIsCompany"
+                              @click="shippingAnotherAddressIsCompanyHandle"
                               :value="true"
                             />
                             <label
@@ -730,30 +738,30 @@ const handleOrder = async (values, actions) => {
                         </div>
                         <div>
                           <FormVTextInput
-                            v-show="billingAnotherAddressIsCompany"
+                            v-show="shippingAnotherAddressIsCompany"
                             type="text"
-                            name="billingAddress.companyName"
+                            name="shippingAddress.companyName"
                             placeholder="Firma*"
                             label="Firma*"
                             class="w-full"
                           />
                           <FormVTextInput
                             type="text"
-                            name="billingAddress.firstName"
+                            name="shippingAddress.firstName"
                             placeholder="Imie*"
                             label="Imie*"
                             class="w-full"
                           />
                           <FormVTextInput
                             type="text"
-                            name="billingAddress.lastName"
+                            name="shippingAddress.lastName"
                             placeholder="Nazwisko*"
                             label="Nazwisko*"
                             class="w-full"
                           />
                           <FormVTextInput
                             type="text"
-                            name="billingAddress.phone"
+                            name="shippingAddress.phone"
                             placeholder="Telefon*"
                             label="Telefon*"
                             class="w-full"
@@ -761,14 +769,14 @@ const handleOrder = async (values, actions) => {
                           <div class="flex gap-3">
                             <FormVTextInput
                               type="text"
-                              name="billingAddress.addressLine1"
+                              name="shippingAddress.addressLine1"
                               placeholder="Ulica*"
                               label="Ulica*"
                               class="w-2/3"
                             />
                             <FormVTextInput
                               type="text"
-                              name="billingAddress.number"
+                              name="shippingAddress.number"
                               placeholder="Nr*"
                               label="Nr*"
                               class="w-1/3"
@@ -777,7 +785,7 @@ const handleOrder = async (values, actions) => {
                           <div class="flex gap-2">
                             <FormVTextInput
                               type="text"
-                              name="billingAddress.postalCode"
+                              name="shippingAddress.postalCode"
                               :fontSize="2"
                               label="Kod pocztowy*"
                               placeholder="Kod pocztowy*"
@@ -785,7 +793,7 @@ const handleOrder = async (values, actions) => {
                             />
                             <FormVTextInput
                               type="text"
-                              name="billingAddress.city"
+                              name="shippingAddress.city"
                               placeholder="Miasto*"
                               label="Miasto*"
                               class="w-3/5"

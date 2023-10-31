@@ -3,9 +3,9 @@ export interface Order {
   shippingAddressId: string;
   billingAddressId: string;
   shippingMethod: string;
-  newAddress: Address;
+  ShippingAddress: Address;
   useShippingAddressAsBillingAddress: boolean;
-  newBillingAddress?: Address;
+  BillingAddress?: Address;
   makeInvoiceVAT: boolean;
   acceptRegulations: boolean;
   acceptMarketing: boolean;
