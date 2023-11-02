@@ -68,14 +68,8 @@
                 <NuxtLink to="/delivery" rel="next" class="transition">
                   <span class="section_text text_line"> Dostawa</span>
                 </NuxtLink>
-                <NuxtLink
-                  to="/order-processing-time"
-                  rel="next"
-                  class="transition"
-                >
-                  <span class="section_text text_line">
-                    Czas realizacji zamówienia</span
-                  >
+                <NuxtLink to="/complete-offer" rel="next" class="transition">
+                  <span class="section_text text_line"> Realizacja oferty</span>
                 </NuxtLink>
                 <NuxtLink :to="'/return-products'" class="transition">
                   <span class="section_text text_line">Zwrot produktów</span>

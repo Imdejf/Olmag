@@ -6,6 +6,9 @@ const application = useApplication();
   <section id="navbar-banner" class="header__banner">
     <slot name="banner" />
   </section>
+  <section id="navbar-tools" class="header__tools">
+    <slot name="tools" />
+  </section>
   <div class="header__search sticky bg-white top-0" style="z-index: 99">
     <header
       id="navbar__middle"

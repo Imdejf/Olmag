@@ -108,8 +108,8 @@ onMounted(() => {
               src="/assets/logo.webp"
               class="hidden md:block"
               alt="Logo Olmag.pl"
-              height="50"
-              width="240"
+              height="80"
+              width="480"
             />
             <img
               src="/assets/logo-mobile.webp"
@@ -141,7 +141,7 @@ onMounted(() => {
               />
               <button
                 @click="routeToSearch"
-                class="bg-primary border bg-green-200 border-primary text-white px-4 md:px-8 rounded-r-md hover:text-primary transition md:flex"
+                class="bg-primary border bg-green-200 border-primary text-white px-3 md:px-5 rounded-r-md hover:text-primary transition md:flex"
                 aria-label="search"
               >
                 <svg
@@ -235,6 +235,26 @@ onMounted(() => {
               </div>
             </button>
             <NuxtLink
+              to="/complete-offer"
+              class="text-center hidden md:block text-gray-700 hover:text-primary transition relative"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                class="h-6 mx-auto"
+              >
+                <path
+                  fill="currentColor"
+                  d="m10.515 12.963l-.193-.097a.75.75 0 0 1 .428-1.366h5.5a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1-.235-.037ZM12 16v-.75c0-.258-.04-.511-.115-.75h4.365a.75.75 0 0 1 0 1.5H12Zm0 3v-1.5h4.25a.75.75 0 0 1 0 1.5H12Zm-6.5-7.95c-.212.044-.42.115-.618.214l-.882.44V4a2 2 0 0 1 2-2h6.172c.028 0 .055.004.082.007a.63.63 0 0 0 .059.007c.215.015.427.056.624.138c.057.024.112.056.166.087l.05.029l.047.024a.652.652 0 0 1 .081.044c.078.053.148.116.219.18l.036.03a.493.493 0 0 1 .049.04l5.829 5.828A2 2 0 0 1 20 9.828V20a2 2 0 0 1-2 2h-7.404l.022-.011a2.5 2.5 0 0 0 1.268-1.489H18a.5.5 0 0 0 .5-.5V10H14a2 2 0 0 1-2-2V3.5H6a.5.5 0 0 0-.5.5v7.05ZM17.378 8.5L13.5 4.621V8a.5.5 0 0 0 .5.5h3.378Zm-7.207 5.408l-3.5-1.75a1.5 1.5 0 0 0-1.342 0l-3.5 1.75A1.5 1.5 0 0 0 1 15.25v4.503a1.5 1.5 0 0 0 .83 1.342l3.5 1.75a1.5 1.5 0 0 0 1.34 0l3.5-1.75a1.5 1.5 0 0 0 .83-1.342V15.25a1.5 1.5 0 0 0-.83-1.342Zm-7.618 1.368a.5.5 0 0 1 .67-.223L6 16.44l2.776-1.388a.5.5 0 1 1 .448.894L6.5 17.31v3.19a.5.5 0 1 1-1 0v-3.19l-2.724-1.363a.5.5 0 0 1-.223-.67Z"
+                />
+              </svg>
+              <div class="text-[9.5px] font-semibold leading-3 uppercase w-max">
+                Realizacja oferty
+              </div>
+            </NuxtLink>
+            <NuxtLink
               to="/contact"
               class="text-center md:hidden text-gray-700 hover:text-primary transition relative"
             >
@@ -250,6 +270,7 @@ onMounted(() => {
                   d="M15 12h2c0-2.76-2.24-5-5-5v2c1.66 0 3 1.34 3 3zm4 0h2a9 9 0 0 0-9-9v2c3.87 0 7 3.13 7 7zm1 3.5c-1.25 0-2.45-.2-3.57-.57c-.1-.03-.21-.05-.31-.05c-.26 0-.51.1-.71.29l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1A11.36 11.36 0 0 1 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1c0 9.39 7.61 17 17 17c.55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM5.03 5h1.5c.07.88.22 1.75.45 2.58l-1.2 1.21c-.4-1.21-.66-2.47-.75-3.79zM19 18.97c-1.32-.09-2.6-.35-3.8-.76l1.2-1.2c.85.24 1.72.39 2.6.45v1.51z"
                 />
               </svg>
+
               <div class="text-[9.5px] font-semibold leading-3 uppercase">
                 Kontakt
               </div>

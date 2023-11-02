@@ -56,7 +56,7 @@ useHead({
                 Olmag.pl - zaopatrzenie magazynów.
               </h1>
               <h2 class="text-sm my-4 md:text-2xl md:font-semibold">
-                Odkryj magazynowanie na wyższym poziomie – sprawdź nasze
+                Odkryj magazynowanie na najwyższym poziomie – sprawdź nasze
                 pojemniki magazynowe i drabiny aluminiowe już dziś!
               </h2>
             </header>
