@@ -24,211 +24,231 @@ definePageMeta({
           >
             <div class="p-5 font-600 text-blue-900">
               <h2 class="text-[22px] font-bold">Polityka Prywatności</h2>
-              <div>
-                <p>
-                  1.Niniejsza Polityka Prywatności określa zasady przetwarzania
-                  i ochrony danych osobowych przekazanych przez Użytkowników w
-                  związku z korzystaniem ze strony internetowej oraz sklepu
-                  internetowego na www.olmag.pl.
-                </p>
-                <p>
-                  2.Administratorem danych osobowych zawartych w serwisie jest
-                  olmag.pl, czyli:
-                </p>
-                <div class="text-center">
-                  <p>Data Sharp Dawid Jabłoński</p>
-                  <p>(ul. Polna 6, 66-340 Przytoczna, NIP: 5961765516)</p>
-                  <p>biuro@olmag.pl</p>
-                </div>
-                <p>
-                  3. W trosce o bezpieczeństwo powierzonych nam przez
-                  Użytkowników danych olmag.pl oświadcza, iż opracował
-                  wewnętrzne procedury i zalecenia, które mają zapobiec
-                  udostępnieniu danych osobom nieupoważnionym. Olmag.pl
-                  kontroluje ich wykonywanie i stale sprawdza ich zgodność z
-                  odpowiednimi aktami prawnymi, w tym w szczególności z ustawą o
-                  ochronie danych osobowych, ustawą o świadczeniu usług drogą
-                  elektroniczną, w tym również w aktach wykonawczych do tych
-                  ustaw oraz w aktach prawa wspólnotowego.
-                </p>
-                <p>
-                  4.Dane osobowe przetwarzane są na podstawie zgody wyrażanej
-                  przez Użytkownika, na zasadach określonych w Regulaminie oraz
-                  w przypadkach, w których przepisy prawa upoważniają
-                  Administratora do przetwarzania danych osobowych na podstawie
-                  przepisów prawa lub w celu realizacji zawartej pomiędzy
-                  stronami umowy.
-                </p>
-                <p>
-                  5.Dane osobowe przetwarzane są na podstawie Regulaminie,
-                  zgodnie z ustawą z dnia 10 maja 2018 r. o ochronie danych
-                  osobowych (Dz. U. z 2019 r., poz. 1781) oraz rozporządzenie
-                  Parlamentu Europejskiego i Rady (UE) 2016/679 z 27.04.2016 r.
-                  w sprawie ochrony osób fizycznych w związku z przetwarzaniem
-                  danych osobowych i w sprawie swobodnego przepływu takich
-                  danych oraz uchylenia dyrektywy 95/46/WE (ogólne
-                  rozporządzenie o ochronie danych) (Dz.Urz. UE L 119, s. 1).
-                </p>
-                <p>
-                  6.Przetwarzane danych osobowych odbywa się w sposób
-                  zapewniający odpowiednie bezpieczeństwo danych osobowych, w
-                  tym poprzez ochronę przed niedozwolonym lub niezgodnym z
-                  prawem przetwarzaniem oraz przypadkową utratą, zniszczeniem
-                  lub uszkodzeniem, oraz za pomocą odpowiednich środków
-                  technicznych lub organizacyjnych.
-                </p>
-                <p>
-                  7.Administratorem danych osobowych przekazanych w ramach
-                  wszelkich czynności objętych niniejszym Regulaminem,
-                  świadczeniem Usług i innych jest olmag.pl. Administrator nie
-                  powoływał Inspektora Ochrony Danych Osobowych.
-                </p>
-                <p>
-                  8.Każdy może skontaktować się z Administratorem. Dane
-                  Administratora danych osobowych oraz kontakt do niego znajduje
-                  się w § 1 Regulaminu.
-                </p>
-                <p>
-                  9.Podstawą prawną przetwarzania danych jest zgoda Klienta na
-                  przetwarzanie danych osobowych.
-                </p>
-                <p>
-                  10.Przetwarzane danych osobowych odbywa się w sposób
-                  zapewniający odpowiednie bezpieczeństwo danych osobowych, w
-                  tym poprzez ochronę przed niedozwolonym lub niezgodnym z
-                  prawem przetwarzaniem oraz przypadkową utratą, zniszczeniem
-                  lub uszkodzeniem, oraz za pomocą odpowiednich środków
-                  technicznych lub organizacyjnych.
-                </p>
-                <p>
-                  11.Zakres przetwarzanych danych osobowych przez
-                  Administratora: imię, nazwisko, adres, numer PESEL, telefon,
-                  adres poczty elektronicznej, numeru rachunku bankowego, numeru
-                  NIP i REGON.
-                </p>
-                <p>
-                  12.Dane osobowe przetwarzane są wyłącznie dla celów związanych
-                  z realizacją Umowy oraz do podjęcia niezbędnych działań
-                  związanych z zawarciem samej Umowy, a w szczególności do:
-                </p>
-                <div>
-                  <p>
-                    a. niezbędnym do wykonania Umowy, której Klient jest stroną,
-                    na podstawie art. 6 ust.1 lit. b RODO;
-                  </p>
-                  <p>
-                    b. niezbędnym do zawarcia Umowy w oparciu o Państwa
-                    zainteresowanie ofertą, na podstawie art. 6 ust. 1 lit. b
-                    RODO;
-                  </p>
-                  <p>
-                    c. badania poziomu satysfakcji Klientów będącego realizacją
-                    prawnie uzasadnionego interesu Administratora i ustalania
-                    jakości obsługi, a także poziomu zadowolenia klientów ze
-                    świadczonych przez nas Usług, na podstawie art. 6 ust. 1
-                    lit. f RODO;
-                  </p>
-                  <p>
-                    d. ewentualnego dochodzenia lub obrony przed roszczeniami,
-                    jako realizacja naszego prawnie uzasadnionego interesu, na
-                    podstawie art. 6 ust. 1 lit. f RODO;
-                  </p>
-                  <p>
-                    e. oferowania Klientom usług jako realizacja naszego prawnie
-                    uzasadnionego interesu w ramach marketingu bezpośredniego, w
-                    tym produktów i usług świadczonych przez podmioty z nami
-                    współpracujące (partnerów).
-                  </p>
-                </div>
-                <p>
-                  13.Podanie danych osobowych nie jest obowiązkowe, jednakże ich
-                  niepodanie spowoduje, że zawarcie i realizacja Umowy będą
-                  niemożliwe. Nie dotyczy to zgody marketingowej, która jest
-                  nieobowiązkowa.
-                </p>
-                <p>
-                  14.W przypadku danych przetwarzanych w celu niezbędnym do
-                  wykonania umowy, w której Klient jest stroną, informujemy, że
-                  będą one przetwarzane przez okres, w którym mogą ujawnić się
-                  roszczenia związane z umową wynikające z przepisów kodeksu
-                  cywilnego i / lub prawa podatkowego, a także przez 5 lat
-                  liczonych od końca roku kalendarzowego, w którym powstał
-                  obowiązek podatkowy. Dane przetwarzane na potrzeby marketingu
-                  bezpośredniego naszych produktów i usług przetwarzamy do
-                  momentu, aż Klient zgłosi sprzeciw względem ich przetwarzania
-                  w tym celu.
-                </p>
-                <p>
-                  15.Dane osobowe mogą być udostępniane naszym partnerom, z
-                  którymi współpracujemy łącząc produkty lub usługi. Do Państwa
-                  danych mogą też mieć dostęp nasi podwykonawcy (podmioty
-                  przetwarzające), takie jak na przykład: firmy informatyczne,
-                  księgowe, audytorskie, kancelarie prawnicze. Administrator nie
-                  zamierza przekazywać żadnych danych osobowych Klientów do
-                  państwa trzeciego ani do organizacji międzynarodowych.
-                </p>
-                <p>
-                  16.Każdy ma prawo żądać od Administratora dostępu do swoich
-                  danych, ich sprostowania, przenoszenia i usunięcia, otrzymania
-                  kopii danych, wniesienie sprzeciwu co do przetwarzania danych,
-                  a także prawo do ograniczenia przetwarzania danych.
-                </p>
-                <p>
-                  17.W związku z przetwarzaniem danych osobowych przez
-                  Administratora każdemu przysługuje prawo wniesienia skargi do
-                  organu nadzorczego – Prezesa Urzędu Ochrony Konkurencji i
-                  Konsumentów w Warszawie.
-                </p>
-                <p>
-                  18. W oparciu o Twoje dane osobowe Administrator nie będzie
-                  podejmował wobec Klientów zautomatyzowanych decyzji, w tym
-                  decyzji będących wynikiem profilowania.
-                </p>
-                <p>
-                  19. W oparciu o Twoje dane osobowe Administrator nie będzie
-                  podejmował wobec Klientów zautomatyzowanych decyzji, w tym
-                  decyzji będących wynikiem profilowania.
-                </p>
-                <div>
-                  <p>
-                    a. poprzez dobrowolnie wprowadzone w formularzach
-                    informacje, b. poprzez gromadzenie plików “cookies”, których
-                    gromadzenie i przetwarzanie odbywa się na podstawie -
-                    POLITYKA COOKIES.
-                  </p>
-                </div>
-                <p>
-                  20. Strona internetowa www.hemanpower.com zbiera informacje
-                  dobrowolnie podane przez użytkownika, w tym dane podane w
-                  formularzu są przetwarzane w celu wynikającym z funkcji
-                  konkretnego formularza np. w celu dokonania procesu obsługi
-                  kontaktu informacyjnego, rejestracji, dokonania zakupu usług,
-                  złożenia reklamacji i korzystania z innych usług świadczonych
-                  przez olmag.pl.
-                </p>
-                <p>
-                  21. Zastrzegamy sobie prawo do zmiany w polityce ochrony
-                  prywatności serwisu, na które może wpłynąć rozwój technologii
-                  internetowej, ewentualne zmiany prawa w zakresie ochrony
-                  danych osobowych oraz rozwój naszego serwisu internetowego. O
-                  wszelkich zmianach będziemy informować w sposób widoczny i
-                  zrozumiały.
-                </p>
-                <p>
-                  22. Niezależnie od powyższego informujemy, iż na stronie
-                  internetowej www.hemanpower.com mogą pojawiać się linki do
-                  innych stron internetowych. Takie strony internetowe działają
-                  niezależnie i nie są w żaden sposób nadzorowane przez serwis
-                  olmag.pl. Strony te mogą posiadać własne polityki dotyczące
-                  prywatności oraz regulaminy, z którymi zalecamy się zapoznać.
-                </p>
-                <p>
-                  23. W razie wątpliwości, co do któregokolwiek z zapisów
-                  niniejszej polityki prywatności uprzejmie informujemy jesteśmy
-                  do Państwa całkowitej dyspozycji - nasze dane znaleźć można w
-                  zakładce KONTAKT na stronie internetowej olmag.pl.
-                </p>
-              </div>
+              <p class="mt-3">
+                Niniejsza Polityka Prywatności określa zasady ochrony i
+                przetwarzania danych osobowych dotyczących Użytkowników serwisu
+                Olmag.pl. Polityka stanowi integralną część Regulaminu sklepu
+                internetowego Olmag.pl. Akceptacja regulaminu sklepu jest
+                równoznaczna z akceptacją Polityki Prywatności.
+              </p>
+              <p class="font-bold mt-3">Administrator</p>
+              <p>
+                Administratorem danych osobowych i wyłącznym właścicielem
+                Serwisu jest firma Data Sharp Dawid Jabłoński z siedzibą w
+                Poznaniu, ul. Polna 6, 66-340 Przytoczna, na podstawie wpisu do
+                ewidencji działalności gospodarczej prowadzonej przez CEiDG.
+                Korzystanie z Serwisu odbywa się na zasadach określonych w
+                Regulaminie. <br />
+                Administrator przetwarza dane osobowe w zgodzie z wymaganiami
+                Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z
+                dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w
+                związku z przetwarzaniem danych osobowych i w sprawie swobodnego
+                przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (dalej
+                jako „RODO”).
+              </p>
+              <p class="font-bold mt-3">Dane zbierane przez sklep</p>
+              <p class="mt-3">
+                Sklep przetwarza i wykorzystuje takie dane jak:
+              </p>
+              <p class="mt-3">
+                - Informacje i Dane kontaktowe (adres poczty elektronicznej,
+                numer telefonu) niezbędne do przekazywania informacji o bieżącym
+                statusie realizacji zamówienia lub potencjalnych komplikacjach.
+              </p>
+              <p class="mt-3">
+                - Dane niezbędne do identyfikacji zamówienia oraz jego
+                zawartość.
+              </p>
+              <p class="mt-3">
+                - Dane adresowe wymagane do wystawienia faktury oraz wysyłki
+                towaru.
+              </p>
+              <p class="mt-3">
+                Wszystkie powyższe dane zbierane są i wykorzystywane przez
+                Usługodawcę przy użyciu następujących narzędzi: formularz
+                rejestracyjny, formularz zamówieniowy, formularz zapytania
+                ofertowego, formularz kontaktowy, a także w czasie bezpośredniej
+                komunikacji z osobą, której dane dotyczą.
+              </p>
+              <p class="font-bold mt-3">Cele wykorzystywania danych</p>
+              <p class="mt-3">
+                - Usługi składania i realizacji zamówień za pośrednictwem sklepu
+                internetowego, aż do momentu finalizacji procesu obsługi
+                zamówienia.
+                <br />
+                - Wywiązywanie się z obowiązków związanych z podatkami lub
+                rachunkowością.
+                <br />
+                - Świadczenie usług dla aktywnego konta użytkownika
+                zarejestrowanego w sklepie, aż do momentu jego usunięcia na
+                wniosek użytkownika.
+                <br />
+                - Przesyłanie propozycji oraz ofert handlowych – pod warunkiem
+                uzyskania zgody od klienta.
+                <br />
+                - Wysyłka ankiet – za zgodą klienta.
+                <br />
+                - Wysyłka Newslettera z informacjami handlowymi oraz
+                informacjami odnośnie sklepu – za zgodą klienta
+              </p>
+              <p class="font-bold mt-3">Przetwarzanie danych za zgodą</p>
+              <p class="mt-3">
+                - Zgoda na przetwarzanie danych osobowych może być odwołana w
+                dowolnym momencie poprzez nawiązanie kontaktu z działem obsługi
+                klienta sklepu internetowego Olmag.pl.
+              </p>
+              <p class="mt-3">
+                - Podanie danych osobowych jest aktem dobrowolnym, aczkolwiek
+                koniecznym do przeprowadzenia procesu realizacji zamówienia
+                przez klienta.
+              </p>
+              <p class="font-bold mt-3">Przetwarzanie danych</p>
+              <p class="mt-3">
+                - Każdy klient ma prawo żądać zaprzestania lub ograniczenia
+                przetwarzania swoich danych osobowych.
+              </p>
+              <p class="mt-3">
+                - Każdy klient posiada prawo wniesienia skargi do odpowiedniego
+                organu nadzorczego zajmującego się ochroną danych osobowych.
+              </p>
+              <p class="mt-3">
+                - Każdy klient ma możliwość wglądu, edycji, transferu oraz
+                żądania usunięcia swoich danych osobowych, które są przetwarzane
+                przez sklep internetowy Olmag.pl.
+              </p>
+              <p class="mt-3">
+                Dane osobowe są udostępniane stronom zaangażowanym w proces
+                obsługi zamówienia klienta. Do takich podmiotów należą dostawcy
+                logistyczni, producenci produktów, jednostki zapewniające
+                obsługę konsumencką oraz pracownicy Administratora – w zakresie
+                niezbędnym do wykonania zamówienia, zgodnie z warunkami umów
+                podpisanych z Administratorem oraz celami wyznaczonymi w
+                Polityce Prywatności.
+              </p>
+              <p class="mt-3">
+                Administrator zastrzega sobie możliwość odmowy usunięcia danych
+                osobowych, jeśli wymagają tego obowiązujące przepisy prawa.
+              </p>
+              <p class="mt-3 font-bold">Pozostałe postanowienia</p>
+              <p class="mt-3">
+                Dane osobowe mogą być przekazywane uprawnionym podmiotom, w tym
+                organom sądowniczym, administracyjnym oraz organom ścigania, w
+                sytuacjach przewidzianych przepisami prawa.
+              </p>
+              <p class="mt-3">
+                Sklep Internetowy Olmag.pl bierze udział w inicjatywie wysyłania
+                ankiet oceniających do klientów, przesyłanych na ich adres
+                e-mail, aby umożliwić im wyrażenie opinii o procesie realizacji
+                zamówienia. Program ten jest prowadzony przez serwis internetowy
+                Okazje.info.pl, który jest częścią Grupy Okazje Sp. z o.o.
+                Uczestnictwo w programie jest całkowicie dobrowolne i nie jest
+                warunkiem koniecznym do dokonania zakupu. W momencie zgodzenia
+                się na udział w programie, klient wyraża zgodę na przesłanie
+                swojego adresu e-mail oraz na przetwarzanie swoich danych
+                osobowych w celu przeprowadzenia ankiety, zgodnie z przepisami
+                prawa, zwłaszcza prawa polskiego, a także Rozporządzeniem
+                Parlamentu Europejskiego i Rady (UE) nr 2016/679 z dnia 27
+                kwietnia 2016 roku.
+              </p>
+              <p class="mt-3">
+                W zakresie przetwarzania płatności, odbiorcami danych osobowych
+                są:
+                <br />
+                - DialCom24 Sp. z o.o. z siedzibą w Poznaniu, przy ul.
+                Kancelarskiej 15, 60-327 Poznań, wpisana do Rejestru
+                Przedsiębiorców prowadzona przez Sąd Rejonowy Poznań - Nowe
+                Miasto i Wilda w Poznaniu, VIII Wydział Gospodarczy Krajowego
+                Rejestru Sądowego pod nr KRS 0000306513.
+              </p>
+              <p class="mt-3">
+                Administrator zastrzega sobie prawo do wprowadzania zmian w
+                Polityce Prywatności
+              </p>
+              <p class="mt-3 font-bold">Pliki Cookie</p>
+              <p class="mt-3">
+                Pragniemy zapewnić, że korzystanie z naszego serwisu
+                internetowego jest całkowicie bezpieczne, intuicyjne i dostarcza
+                użytkownikom wszystkich wymaganych informacji. W celu realizacji
+                tych założeń wykorzystujemy pliki cookie, które są zapisywane na
+                urządzeniu użytkownika i pozwalają nam na gromadzenie danych
+                dotyczących wizyt na naszej stronie. Te informacje są kluczowe
+                dla prawidłowego funkcjonowania strony olmag.pl. Nasza strona
+                internetowa nie gromadzi automatycznie żadnych informacji o
+                użytkowniku, poza tymi, które są zapisywane w plikach cookie.
+              </p>
+              <p class="mt-3">
+                Czym są i do czego służą pliki cookie?
+                <br />
+                - Jest to niewielka informacja tekstowa zapisywana przez serwer
+                na komputerze użytkownika w pliku cookie, którą serwer może
+                odczytać przy ponownym połączeniu się z tego komputera. Pliki
+                Cookie zazwyczaj zawierają nazwę strony internetowej, z której
+                pochodzą, czas przechowywania ich na urządzeniu końcowym oraz
+                unikalny numer.
+              </p>
+              <p class="mt-3">Do czego wykorzystujemy pliki cookie?</p>
+              <p class="mt-3">
+                - Generowanie statystyk pozwalających na analizę sposobów
+                korzystania przez Użytkowników z serwisu internetowego, co
+                umożliwia ulepszenie jego struktury i zawartości
+                <br />
+                - Zapewnienie stabilności połączenia z właściwym serwisem na
+                stronie internetowej, szczególnie kiedy przeprowadzane są zmiany
+                w funkcjonowaniu witryny.
+                <br />
+                - Dopasowanie treści witryny internetowej do osobistych
+                preferencji Użytkownika i optymalizacja użyteczności strony.
+                <br />
+                - Rozpoznawanie użytkowników jako zalogowanych w serwisie
+                Olmag.pl, co umożliwia uniknięcie konieczności powtórnego
+                wprowadzania danych logowania na każdej podstronie portalu.
+                <br />
+                - Zachowywanie informacji o produktach i usługach dodanych do
+                koszyka lub zamówionych na etapie realizacji zakupu w serwisie.
+              </p>
+              <p class="mt-3">Rodzaje plików Cookie</p>
+              <p class="mt-3">
+                Serwis wykorzystuje dwa typy plików cookie: „sesyjne” oraz
+                „stałe”. Pliki cookie „sesyjne” to pliki tymczasowe, które
+                pozostają na urządzeniu użytkownika aż do momentu wylogowania
+                się, zamknięcia strony internetowej lub wyłączenia przeglądarki.
+                Z kolei pliki cookie „stałe” są zapisywane na urządzeniu
+                końcowym użytkownika na czas określony w ustawieniach plików
+                cookie albo do momentu ich ręcznego usunięcia przez użytkownika.
+              </p>
+              <p class="mt-3">
+                Jak ograniczyć lub usunąć pliki cookie z komputera?
+              </p>
+              <p class="mt-3">
+                - Państwo mają możliwość zarządzania plikami cookie, zarówno ich
+                ograniczania, jak i usuwania, poprzez zmianę ustawień w
+                przeglądarce internetowej. Zachęcamy do wykorzystania funkcji
+                pomocy dostępnej w przeglądarce, aby zaznajomić się z procedurą.
+                Należy jednak być świadomym, że blokada lub usunięcie plików
+                cookie z naszej witryny może prowadzić do ograniczeń w jej
+                funkcjonalności.
+                <br />
+                - Pliki cookie umieszczane na urządzeniu końcowym użytkownika
+                mogą być również wykorzystywane przez reklamodawców oraz
+                partnerów współpracujących z operatorem serwisu.
+                <br />
+                - Zazwyczaj oprogramowanie do przeglądania stron internetowych
+                (przeglądarka) domyślnie ustawione jest na akceptowanie
+                przechowywania plików cookie na urządzeniu końcowym. Użytkownicy
+                serwisu mogą w dowolnym momencie zmodyfikować ustawienia
+                dotyczące plików cookie. Takie zmiany mogą polegać na manualnym
+                zarządzaniu plikami cookie, włącznie z możliwością blokowania
+                automatycznego ich używania w ustawieniach przeglądarki lub
+                otrzymywania powiadomień o ich umieszczaniu na urządzeniu
+                użytkownika. Szczegółowe informacje o zarządzaniu plikami cookie
+                znajdują się w opcjach lub ustawieniach wybranej przeglądarki
+                internetowej.
+                <br />
+                - Dodatkowe informacje na temat plików cookie można znaleźć w
+                dziale "Pomoc" dostępnym w menu większości przeglądarek
+                internetowych oraz na stronie internetowej
+                www.allaboutcookies.org.
+              </p>
             </div>
           </div>
         </PageSection>
