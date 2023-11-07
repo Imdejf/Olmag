@@ -49,7 +49,7 @@ watchEffect(() => {
       } ${cart.addCartResult ? 'overflow-hidden wrapper-scroll' : ''}
       ${application.questionProduct ? 'overflow-hidden wrapper-scroll' : ''}`"
     >
-      <BannerCookieBanner v-show="!cookie" />
+      <!-- <BannerCookieBanner v-show="!cookie" /> -->
       <div v-if="cart.addCartResult" class="relative" style="z-index: 9999">
         <ModalAddToCartResult />
       </div>
