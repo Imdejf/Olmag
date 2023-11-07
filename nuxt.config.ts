@@ -101,7 +101,7 @@ gtm: {
 
   modules: [
     'nuxt-jsonld',
-    'nuxt-swiper',
+    // 'nuxt-swiper',
     '@pinia/nuxt',
     'nuxt-simple-sitemap',
     'nuxt-simple-robots',
@@ -112,9 +112,9 @@ gtm: {
     }],  
   ],
 
-  swiper: {
-    modules: ['navigation', 'pagination', 'thumbs', 'free-mode'],
-  },
+  // swiper: {
+  //   modules: ['navigation', 'pagination', 'thumbs', 'free-mode'],
+  // },
   
   robots: {
     sitemap: '/sitemap.xml'
