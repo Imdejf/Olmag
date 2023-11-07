@@ -8,6 +8,8 @@ const application = useApplication();
 const cart = useCart();
 const cookie = useCookie("cookie");
 
+const gtm = useGtm();
+
 const isScriptReady = ref(false);
 
 setTimeout(() => {
