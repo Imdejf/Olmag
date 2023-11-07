@@ -15,7 +15,7 @@ const GlobalSettings = {
     siteEnvironment: "Production",
     apiBaseURL: "https://olmag.azurewebsites.net/api/",
     baseURL: "https://olmag.azurewebsites.net/",
-    hostURL: "https://agreeable-water-033a2c003.4.azurestaticapps.net/",
+    hostURL: "https://olmag.pl/",
     googleTagManagerKey: "GTM-NXFTLZGJ",
     googleTagManagerEnabled: true,
     googleTagManagerDebug: false,
