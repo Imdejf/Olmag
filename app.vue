@@ -6,6 +6,7 @@ import { useCart } from "./stores/cart";
 
 const application = useApplication();
 const cart = useCart();
+const cookie = useCookie("cookie");
 
 const isScriptReady = ref(false);
 
@@ -48,6 +49,7 @@ watchEffect(() => {
       } ${cart.addCartResult ? 'overflow-hidden wrapper-scroll' : ''}
       ${application.questionProduct ? 'overflow-hidden wrapper-scroll' : ''}`"
     >
+      <BannerCookieBanner v-show="!cookie" />
       <div v-if="cart.addCartResult" class="relative" style="z-index: 9999">
         <ModalAddToCartResult />
       </div>

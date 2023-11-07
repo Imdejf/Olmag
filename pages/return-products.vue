@@ -7,7 +7,9 @@ definePageMeta({
 <template>
   <PageWrapper>
     <PageHeader>
-      <PageTitle :textNav="[{ text: 'Zwrot produktów', slug: 'return-products' }]">
+      <PageTitle
+        :textNav="[{ text: 'Zwrot produktów', slug: 'return-products' }]"
+      >
       </PageTitle>
     </PageHeader>
     <PageBody>
@@ -94,24 +96,24 @@ definePageMeta({
                         w sytuacji, gdy umowa dotyczy dostarczenia produktu
                         niebędącego produktem gotowym, lecz wykonanym według
                         specyfikacji konsumenta lub dostosowanym do jego
-                        indywidualnych wymagań;
+                        indywidualnych wymagań.
                       </li>
                       <li class="mt-5">
                         gdy przedmiot umowy to produkt, który szybko się psuje
-                        lub ma ograniczony czas ważności;
+                        lub ma ograniczony czas ważności.
                       </li>
                       <li class="mt-5">
                         gdy przedmiot umowy to produkt w szczelnym opakowaniu,
                         którego po otwarciu nie można zwrócić z powodów
                         higienicznych lub ochrony zdrowia, jeśli opakowanie
-                        zostało otwarte po otrzymaniu;
+                        zostało otwarte po otrzymaniu.
                       </li>
                       <li class="mt-5">
                         w której przedmiotem świadczenia jest rzecz dostarczana
                         w zapieczętowanym opakowaniu, której po otwarciu
                         opakowania nie można zwrócić ze względu na ochronę
                         zdrowia lub ze względów higienicznych, jeżeli opakowanie
-                        zostało otwarte po dostarczeniu;
+                        zostało otwarte po dostarczeniu.
                       </li>
                       <li class="mt-5">
                         gdy chodzi o dostarczanie materiałów cyfrowych
@@ -119,7 +121,7 @@ definePageMeta({
                         rozpoczęło się z wyraźnej zgody Konsumenta przed końcem
                         okresu odstąpienia i po tym, jak został poinformowany
                         przez sprzedawcę o możliwej utracie prawa do rezygnacji
-                        z umowy;
+                        z umowy.
                       </li>
                     </ol>
                     <p>

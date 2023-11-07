@@ -9,13 +9,14 @@ export default defineNuxtConfig({
   ssr: false,
   devtools: { enabled: true },
   site: {
-    url: GlobalSettings[appEnv].baseURL
+    url: GlobalSettings[appEnv].hostURL
   },
   nitro: {
     routeRules: {
       "/public/assets/**": { headers: { 'cache-control': `public,max-age=${31536000},s-maxage=${31536000}` } },
-      '/': { isr: true },
-      '/post/**' : { ssr: true }
+      '/': { ssr: true },
+      '/post/**' : { ssr: true },
+      '/products/**': { ssr: true },
     },
 },
 hooks: {
@@ -101,6 +102,10 @@ app: {
     modules: ['navigation', 'pagination', 'thumbs', 'free-mode'],
   },
   
+  robots: {
+    sitemap: '/sitemap.xml'
+  },  
+  
   sitemap: {
     xsl: false,
     cacheTtl: 1000 * 60 * 60 * 24, // 1 day
@@ -111,14 +116,68 @@ app: {
     '/': { sitemap: { 
       changefreq: 'daily', 
       priority: 1.0.toFixed(1)
-      },
-    }
+    },
   },
-
-  robots: {
-    sitemap: '/sitemap.xml'
+  '/checkout/**': { index: false },
+  '/search/**': { index: false },
+  '/account/**': { index: false },
+  '/about-us': { sitemap: {
+    changefreq: 'daily', 
+    priority: 0.9
+    }     
   },
-  
+  '/About-Cookies' : { index: false },
+  '/about-cookies': { sitemap: {
+    changefreq: 'daily',
+    priority: 0.9
+    }     
+  },
+  '/blog': { sitemap: {
+    changefreq: 'daily', 
+    priority: 0.9
+    }     
+  },
+  '/contact': { sitemap: {
+    changefreq: 'daily', 
+    priority: 0.9
+    }     
+  },
+  '/login': { sitemap: {
+    changefreq: 'daily', 
+    priority: 0.9
+    }     
+  },
+  '/payment': { sitemap: {
+    changefreq: 'daily', 
+    priority: 0.9
+    }     
+  },
+  '/category': { sitemap: {
+    changefreq: 'daily', 
+    priority: 0.9
+    }     
+  },
+  '/privacy-policy': { sitemap: {
+    changefreq: 'daily', 
+    priority: 0.9
+    }     
+  },
+  '/delivery': { sitemap: {
+    changefreq: 'daily', 
+    priority: 0.9
+    }     
+  },
+  '/register': { sitemap: {
+    changefreq: 'daily', 
+    priority: 0.9
+    }     
+  },
+  '/terms-of-use': { sitemap: {
+    changefreq: 'daily', 
+    priority: 0.9
+    }     
+  },
+  }
 })
 
 const getBlogRoutes = async () => {

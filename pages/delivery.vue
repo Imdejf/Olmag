@@ -47,8 +47,8 @@ definePageMeta({
                   odpowiedniej kwoty na koncie firmy Olmag.pl.
                 </p>
                 <p class="mt-5">
-                  Standardowy koszt przesyłki to 20 zł. Jednak przy bardzo
-                  ciężkich paczkach może ulec podwyższeniu.
+                  Podstawowa opłata za dostawę wynosi 20 zł. W przypadku paczek
+                  o znacznej wadze opłata ta może zostać zwiększona.
                 </p>
                 <p class="mt-5">
                   Przesyłki kurierskie są dostarczane od poniedziałku do piątku

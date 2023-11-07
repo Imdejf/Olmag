@@ -2,6 +2,7 @@
 import categories from "~/data/category/categories.json";
 import products from "~/data/product/products.json";
 import blogCategories from "~/data/blog/blogs.json";
+
 // compiler macro
 definePageMeta({
   layout: "page",
