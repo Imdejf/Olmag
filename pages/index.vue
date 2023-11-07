@@ -374,7 +374,7 @@ useHead({
               <h2 class="distinction__title mx-auto">Blog magazynowy</h2>
             </div>
             <div class="mx-auto container">
-              <SwiperBlogCard :blogs="blogCategories" />
+              <LazySwiperBlogCard :blogs="blogCategories" />
             </div>
           </div>
         </div>
