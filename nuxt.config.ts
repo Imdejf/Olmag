@@ -98,9 +98,9 @@ app: {
     }],  
   ],
 
-  // swiper: {
-  //   modules: ['navigation', 'pagination', 'thumbs', 'free-mode'],
-  // },
+  swiper: {
+    modules: ['navigation', 'pagination', 'thumbs', 'free-mode'],
+  },
   
   robots: {
     sitemap: '/sitemap.xml'
