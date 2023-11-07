@@ -9,8 +9,8 @@ definePageMeta({
 });
 
 const config = useRuntimeConfig().public;
-// const $gtm = useGTM();
-// $gtm.enable();
+const $gtm = useGTM();
+$gtm.enable();
 
 useJsonld(() => ({
   "@context": "https://schema.org",

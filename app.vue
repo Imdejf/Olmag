@@ -8,13 +8,11 @@ const application = useApplication();
 const cart = useCart();
 const cookie = useCookie("cookie");
 
-const gtm = useGtm();
-
 const isScriptReady = ref(false);
 
-setTimeout(() => {
-  isScriptReady.value = true;
-}, 5000);
+// setTimeout(() => {
+//   isScriptReady.value = true;
+// }, 5000);
 
 watchEffect(() => {
   if (isScriptReady.value) {
@@ -51,7 +49,7 @@ watchEffect(() => {
       } ${cart.addCartResult ? 'overflow-hidden wrapper-scroll' : ''}
       ${application.questionProduct ? 'overflow-hidden wrapper-scroll' : ''}`"
     >
-      <!-- <BannerCookieBanner v-show="!cookie" /> -->
+      <BannerCookieBanner v-show="!cookie" />
       <div v-if="cart.addCartResult" class="relative" style="z-index: 9999">
         <ModalAddToCartResult />
       </div>

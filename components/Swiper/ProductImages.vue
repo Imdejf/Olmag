@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 import VueEasyLightbox from "vue-easy-lightbox";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Pagination, Navigation, Thumbs, FreeMode } from "swiper/modules";
 
 import { ref } from "vue";
 
@@ -36,12 +38,7 @@ const hideLightbox = () => {
       :thumbs="{ swiper: thumbsSwiper }"
       :centeredSlides="true"
       :slidesPerView="'auto'"
-      :modules="[
-        SwiperNavigation,
-        SwiperPagination,
-        SwiperThumbs,
-        SwiperFreeMode,
-      ]"
+      :modules="[Navigation, Pagination, Thumbs, FreeMode]"
       class="h-[200px] md:h-[300px] w-4/5 m-auto"
     >
       <SwiperSlide v-for="(image, index) in images" :key="image">
@@ -70,12 +67,7 @@ const hideLightbox = () => {
           spaceBetween: 10,
         },
       }"
-      :modules="[
-        SwiperNavigation,
-        SwiperPagination,
-        SwiperThumbs,
-        SwiperFreeMode,
-      ]"
+      :modules="[Navigation, Pagination, Thumbs, FreeMode]"
       class="swiper_image_vertical swiper_product h-[150px] md:h-[400px] w-1/5 !hidden md:!block !m-0"
     >
       <SwiperSlide v-for="image in images" :key="image">
